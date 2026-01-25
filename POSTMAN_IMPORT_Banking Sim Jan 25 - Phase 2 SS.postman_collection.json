@@ -1,0 +1,1443 @@
+{
+  "info": {
+    "_postman_id": "714def19-369e-4d84-9b45-69c4188fc7b9",
+    "name": "Banking Sim Jan 25 - Phase 2 SS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48335821",
+    "_collection_link": "https://go.postman.co/collection/48335821-714def19-369e-4d84-9b45-69c4188fc7b9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "auth/register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"{{username}}\",\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\",\n  \"adminStatus\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "auth/login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usernameOrEmail\": \"{{usernameOrEmail}}\",\n  \"password\": \"{{password}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/auth/login?Content-Type=application/json",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "auth",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Slots",
+      "item": [
+        {
+          "name": "api/slots",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/bank",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/bank",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "bank"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/mortgage-rate",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mortgageRate\": \"{{mortgageRate}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/mortgage-rate",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "mortgage-rate"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Clients",
+      "item": [
+        {
+          "name": "api/slots/{{slotId}}/clients",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/clients",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "clients"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/clients/{{clientId}}",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/clients/{{clientId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "clients",
+                "{{clientId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/clients/{{clientId}}/transactions",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/clients/{{clientId}}/transactions",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "clients",
+                "{{clientId}}",
+                "transactions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/clients/{{clientId}}/properties",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/clients/{{clientId}}/properties",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "clients",
+                "{{clientId}}",
+                "properties"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/clients/{{clientId}}/deposit",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": \"{{amount}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/clients/{{clientId}}/deposit",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "clients",
+                "{{clientId}}",
+                "deposit"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/clients/{{clientId}}/withdraw",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": \"{{amount}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/clients/{{clientId}}/withdraw",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "clients",
+                "{{clientId}}",
+                "withdraw"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/clients",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"{{name}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/clients",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "clients"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "api/slots/{{slotId}}/products",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/products",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"{{name}}\",\n  \"price\": \"{{price}}\",\n  \"description\": \"{{description}}\",\n  \"rooms\": \"{{rooms}}\",\n  \"sqft2\": \"{{sqft2}}\",\n  \"imageUrl\": \"{{imageUrl}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/products/{{productId}}",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"{{name}}\",\n  \"price\": \"{{price}}\",\n  \"description\": \"{{description}}\",\n  \"rooms\": \"{{rooms}}\",\n  \"sqft2\": \"{{sqft2}}\",\n  \"imageUrl\": \"{{imageUrl}}\",\n  \"status\": \"{{status}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/products/{{productId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "products",
+                "{{productId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/products/{{productId}}",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/products/{{productId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "products",
+                "{{productId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Mortgages",
+      "item": [
+        {
+          "name": "api/slots/{{slotId}}/clients/{{clientId}}/mortgages",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": \"{{productId}}\",\n  \"downPayment\": \"{{downPayment}}\",\n  \"termYears\": \"{{termYears}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/clients/{{clientId}}/mortgages",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "clients",
+                "{{clientId}}",
+                "mortgages"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/mortgages/{{mortgageId}}/approve",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/mortgages/{{mortgageId}}/approve",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "mortgages",
+                "{{mortgageId}}",
+                "approve"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/mortgages/{{mortgageId}}/approve Copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/mortgages/{{mortgageId}}/reject",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "mortgages",
+                "{{mortgageId}}",
+                "reject"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/clients/{{clientId}}/mortgages Copy",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/mortgages",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "mortgages"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Investments & Charts",
+      "item": [
+        {
+          "name": "api/slots/{{slotId}}/investments/sp500",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/investments/sp500",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "investments",
+                "sp500"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/investments/sp500/invest",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": \"{{amount}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/investments/sp500/invest",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "investments",
+                "sp500",
+                "invest"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/investments/sp500/divest",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": \"{{amount}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/investments/sp500/divest",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "investments",
+                "sp500",
+                "divest"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/charts/clients",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/charts/clients",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "charts",
+                "clients"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/charts/activity",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/charts/activity",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "charts",
+                "activity"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Loans",
+      "item": [
+        {
+          "name": "api/slots/{{slotId}}/clients/{{clientId}}/loans",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": \"{{amount}}\",\n  \"termYears\": \"{{termYears}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/clients/{{clientId}}/loans",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "clients",
+                "{{clientId}}",
+                "loans"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/loans",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/loans",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "loans"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/loans/{{loanId}}/approve",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/loans/{{loanId}}/approve",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "loans",
+                "{{loanId}}",
+                "approve"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "api/slots/{{slotId}}/loans/{{loanId}}/reject",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/slots/{{slotId}}/loans/{{loanId}}/reject",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "slots",
+                "{{slotId}}",
+                "loans",
+                "{{loanId}}",
+                "reject"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "api/slots/{{slotId}}/products",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/slots/{{slotId}}/products",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "slots",
+            "{{slotId}}",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "auth/login token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"usernameOrEmail\": \"add\",\n  \"password\": \"password\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "First success token request for user.",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@gmail.com\",\n  \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 23 Jan 2026 06:28:45 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2OTE0OTcyNSwiZXhwIjoxNzY5MjM2MTI1fQ.d5T9XcPQHAAKbvJ4yKV0v1xwWImq_bKJyi7eopy2Dkc\",\n    \"user\": {\n        \"id\": 1,\n        \"email\": \"test@gmail.com\",\n        \"firstName\": \"Test\",\n        \"lastName\": \"Guy\",\n        \"phone\": \"\",\n        \"roles\": [\n            \"CLIENT\"\n        ]\n    }\n}"
+        },
+        {
+          "name": "auth/login token",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usernameOrEmail\": \"add\",\n  \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Sun, 25 Jan 2026 08:52:22 GMT"
+            },
+            {
+              "key": "connection",
+              "value": "close"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGQiLCJpYXQiOjE3NjkzMzExNDIsImV4cCI6MTc2OTQxNzU0Mn0.xyu0x3YoOrojvsGuVQNgh7s3ie45Mb-efUvFvvT38ZY\",\n    \"tokenType\": \"Bearer\",\n    \"adminStatus\": true\n}"
+        }
+      ]
+    }
+  ]
+}
