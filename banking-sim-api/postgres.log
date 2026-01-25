@@ -1,0 +1,1335 @@
+2026-01-21 23:07:53.592 EST [10695] LOG:  starting PostgreSQL 18.1 (Homebrew) on aarch64-apple-darwin25.1.0, compiled by Apple clang version 17.0.0 (clang-1700.4.4.1), 64-bit
+2026-01-21 23:07:53.594 EST [10695] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-01-21 23:07:53.594 EST [10695] LOG:  listening on IPv6 address "::1", port 5432
+2026-01-21 23:07:53.594 EST [10695] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2026-01-21 23:07:53.599 EST [10791] LOG:  database system was shut down at 2026-01-14 18:16:52 EST
+2026-01-21 23:07:53.602 EST [10695] LOG:  database system is ready to accept connections
+2026-01-21 23:08:00.609 EST [11032] ERROR:  role "alkicorp" already exists
+2026-01-21 23:08:00.609 EST [11032] STATEMENT:  CREATE USER alkicorp WITH PASSWORD 'password';
+2026-01-21 23:12:53.600 EST [10787] LOG:  checkpoint starting: time
+2026-01-21 23:13:36.659 EST [11932] ERROR:  relation "public.databasechangeloglock" does not exist at character 22
+2026-01-21 23:13:36.659 EST [11932] STATEMENT:  SELECT COUNT(*) FROM public.databasechangeloglock
+2026-01-21 23:14:35.246 EST [10787] LOG:  checkpoint complete: wrote 1002 buffers (6.1%), wrote 3 SLRU buffers; 1 WAL file(s) added, 0 removed, 0 recycled; write=101.629 s, sync=0.007 s, total=101.646 s; sync files=337, longest=0.001 s, average=0.001 s; distance=4778 kB, estimate=4778 kB; lsn=0/1C935A0, redo lsn=0/1C35890
+2026-01-21 23:20:38.279 EST [12787] FATAL:  database "5" does not exist
+2026-01-21 23:20:38.283 EST [12788] FATAL:  database "5" does not exist
+2026-01-21 23:20:47.838 EST [12799] FATAL:  database "5" does not exist
+2026-01-21 23:20:47.841 EST [12800] FATAL:  database "5" does not exist
+2026-01-21 23:20:54.888 EST [12807] FATAL:  database "5" does not exist
+2026-01-21 23:20:54.892 EST [12808] FATAL:  database "5" does not exist
+2026-01-21 23:21:38.559 EST [12849] FATAL:  database "5" does not exist
+2026-01-21 23:21:38.564 EST [12850] FATAL:  database "5" does not exist
+2026-01-21 23:22:48.330 EST [12912] FATAL:  database "5" does not exist
+2026-01-21 23:22:48.333 EST [12913] FATAL:  database "5" does not exist
+2026-01-21 23:23:07.779 EST [12927] FATAL:  database "5" does not exist
+2026-01-21 23:23:07.784 EST [12928] FATAL:  database "5" does not exist
+2026-01-21 23:25:46.318 EST [13065] FATAL:  database "5" does not exist
+2026-01-21 23:25:46.322 EST [13066] FATAL:  database "5" does not exist
+2026-01-21 23:31:50.206 EST [13097] ERROR:  relation "bank_state" does not exist at character 15
+2026-01-21 23:31:50.206 EST [13097] STATEMENT:  SELECT * FROM bank_state ORDER BY slot_id;
+	
+2026-01-21 23:32:31.934 EST [13097] ERROR:  relation "bank_state" does not exist at character 15
+2026-01-21 23:32:31.934 EST [13097] STATEMENT:  SELECT * FROM bank_state ORDER BY slot_id;
+	
+2026-01-21 23:32:53.258 EST [10787] LOG:  checkpoint starting: time
+2026-01-21 23:33:00.292 EST [10787] LOG:  checkpoint complete: wrote 69 buffers (0.4%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=7.027 s, sync=0.002 s, total=7.034 s; sync files=44, longest=0.001 s, average=0.001 s; distance=378 kB, estimate=4338 kB; lsn=0/1C94278, redo lsn=0/1C94220
+2026-01-21 23:43:09.587 EST [11932] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:43:09.587 EST [11932] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:43:14.582 EST [11932] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:43:14.582 EST [11932] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:43:19.582 EST [11932] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:43:19.582 EST [11932] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:43:24.583 EST [11932] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:43:24.583 EST [11932] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:43:29.582 EST [11932] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:43:29.582 EST [11932] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:43:34.589 EST [11939] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:43:34.589 EST [11939] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:43:39.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:43:39.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:43:44.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:43:44.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:43:49.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:43:49.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:43:54.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:43:54.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:43:59.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:43:59.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:44:04.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:44:04.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:44:09.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:44:09.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:44:14.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:44:14.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:44:19.581 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:44:19.581 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:44:24.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:44:24.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:44:29.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:44:29.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:44:34.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:44:34.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:44:39.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:44:39.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:44:44.581 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:44:44.581 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:44:49.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:44:49.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:44:54.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:44:54.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:44:59.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:44:59.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:45:04.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:45:04.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:45:09.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:45:09.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:45:14.581 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:45:14.581 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:45:19.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:45:19.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:45:24.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:45:24.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:45:29.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:45:29.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:45:34.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:45:34.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:45:39.581 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:45:39.581 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:45:44.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:45:44.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:45:49.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:45:49.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:45:54.585 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:45:54.585 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:45:59.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:45:59.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:46:04.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:46:04.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:46:09.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:46:09.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:46:14.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:46:14.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:46:19.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:46:19.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:46:24.581 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:46:24.581 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:46:29.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:46:29.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:46:34.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:46:34.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:46:39.580 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:46:39.580 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:46:44.581 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:46:44.581 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:46:49.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:46:49.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:46:54.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:46:54.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:46:59.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:46:59.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:47:04.586 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:47:04.586 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:47:09.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:47:09.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:47:14.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:47:14.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:47:19.585 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:47:19.585 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:47:24.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:47:24.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:47:29.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:47:29.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:47:34.585 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:47:34.585 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:47:39.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:47:39.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:47:44.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:47:44.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:47:49.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:47:49.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:47:54.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:47:54.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:47:59.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:47:59.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:48:04.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:48:04.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:48:09.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:48:09.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:48:14.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:48:14.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:48:19.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:48:19.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:48:24.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:48:24.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:48:29.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:48:29.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:48:34.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:48:34.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:48:39.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:48:39.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:48:44.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:48:44.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:48:49.581 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:48:49.581 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:48:54.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:48:54.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:48:59.581 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:48:59.581 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:49:04.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:49:04.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:49:09.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:49:09.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:49:14.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:49:14.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:49:19.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:49:19.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:49:24.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:49:24.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:49:29.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:49:29.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:49:34.585 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:49:34.585 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:49:39.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:49:39.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:49:44.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:49:44.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:49:49.596 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:49:49.596 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:49:54.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:49:54.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:49:59.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:49:59.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:50:04.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:50:04.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:50:09.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:50:09.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:50:14.596 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:50:14.596 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:50:19.585 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:50:19.585 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:50:24.580 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:50:24.580 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:50:29.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:50:29.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:50:34.590 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:50:34.590 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:50:39.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:50:39.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:50:44.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:50:44.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:50:49.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:50:49.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:50:54.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:50:54.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:50:59.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:50:59.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:51:04.599 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:51:04.599 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:51:09.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:51:09.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:51:14.585 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:51:14.585 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:51:19.600 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:51:19.600 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:51:24.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:51:24.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:51:29.589 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:51:29.589 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:51:34.598 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:51:34.598 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:51:39.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:51:39.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:51:44.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:51:44.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:51:49.590 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:51:49.590 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:51:54.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:51:54.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:51:59.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:51:59.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:52:04.589 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:52:04.589 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:52:09.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:52:09.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:52:14.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:52:14.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:52:19.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:52:19.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:52:24.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:52:24.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:52:29.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:52:29.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:52:34.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:52:34.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:52:39.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:52:39.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:52:44.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:52:44.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:52:49.586 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:52:49.586 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:52:54.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:52:54.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:52:59.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:52:59.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:53:04.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:53:04.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:53:09.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:53:09.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:53:14.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:53:14.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:53:19.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:53:19.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:53:24.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:53:24.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:53:29.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:53:29.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:53:34.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:53:34.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:53:39.585 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:53:39.585 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:53:44.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:53:44.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:53:49.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:53:49.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:53:54.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:53:54.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:53:59.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:53:59.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:54:04.581 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:54:04.581 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:54:09.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:54:09.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:54:14.582 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:54:14.582 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:54:19.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:54:19.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:54:24.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:54:24.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:54:29.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:54:29.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:54:34.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:54:34.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:54:39.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:54:39.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:54:44.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:54:44.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:54:49.584 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:54:49.584 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:54:54.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:54:54.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:54:59.585 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:54:59.585 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:55:04.583 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:55:04.583 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:55:09.585 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:55:09.585 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:55:14.589 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:55:14.589 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:55:19.587 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:55:19.587 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:55:24.590 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:55:24.590 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:55:29.590 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:55:29.590 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:55:34.590 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:55:34.590 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:55:39.591 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:55:39.591 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:55:44.591 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:55:44.591 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:55:49.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:55:49.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:55:54.591 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:55:54.591 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:55:59.591 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:55:59.591 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:56:04.590 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:56:04.590 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:56:09.590 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:56:09.590 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:56:14.590 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:56:14.590 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:56:19.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:56:19.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:56:24.591 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:56:24.591 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:56:29.591 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:56:29.591 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:56:34.590 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:56:34.590 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:56:39.590 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:56:39.590 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:56:44.591 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:56:44.591 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:56:49.590 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:56:49.590 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:56:54.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:56:54.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:56:59.591 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:56:59.591 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:57:04.590 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:57:04.590 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:57:09.593 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:57:09.593 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:57:14.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:57:14.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:57:19.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:57:19.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:57:24.593 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:57:24.593 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:57:29.591 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:57:29.591 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:57:34.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:57:34.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:57:39.591 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:57:39.591 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:57:44.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:57:44.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:57:49.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:57:49.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:57:54.593 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:57:54.593 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:57:59.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:57:59.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:58:04.597 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:58:04.597 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:58:09.593 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:58:09.593 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:58:14.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:58:14.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:58:19.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:58:19.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:58:24.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:58:24.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:58:29.591 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:58:29.591 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:58:34.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:58:34.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:58:39.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:58:39.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:58:44.591 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:58:44.591 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:58:49.591 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:58:49.591 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:58:54.592 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:58:54.592 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-21 23:58:55.066 EST [14029] ERROR:  cannot execute INSERT in a read-only transaction
+2026-01-21 23:58:55.066 EST [14029] STATEMENT:  insert into investment_event (amount,asset,created_at,game_day,slot_id,type) values ($1,$2,$3,$4,$5,$6) returning id
+2026-01-22 00:02:53.312 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 00:02:53.828 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.509 s, sync=0.001 s, total=0.516 s; sync files=6, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=3904 kB; lsn=0/1C94910, redo lsn=0/1C948B8
+2026-01-22 00:12:02.972 EST [16097] FATAL:  role "postgres" does not exist
+2026-01-22 00:12:03.388 EST [16107] FATAL:  role "postgres" does not exist
+2026-01-22 00:17:53.836 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 00:17:56.903 EST [10787] LOG:  checkpoint complete: wrote 30 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=3.063 s, sync=0.001 s, total=3.068 s; sync files=23, longest=0.001 s, average=0.001 s; distance=118 kB, estimate=3526 kB; lsn=0/1CB2478, redo lsn=0/1CB2420
+2026-01-22 00:22:53.906 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 00:22:56.358 EST [10787] LOG:  checkpoint complete: wrote 24 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=2.445 s, sync=0.001 s, total=2.452 s; sync files=13, longest=0.001 s, average=0.001 s; distance=139 kB, estimate=3187 kB; lsn=0/1CD5320, redo lsn=0/1CD5290
+2026-01-22 00:27:53.362 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 00:27:54.076 EST [10787] LOG:  checkpoint complete: wrote 7 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.712 s, sync=0.001 s, total=0.714 s; sync files=6, longest=0.001 s, average=0.001 s; distance=42 kB, estimate=2872 kB; lsn=0/1CDFDF8, redo lsn=0/1CDFDA0
+2026-01-22 00:32:53.079 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 00:32:53.598 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.520 s; sync files=5, longest=0.001 s, average=0.001 s; distance=32 kB, estimate=2588 kB; lsn=0/1CE8090, redo lsn=0/1CE8038
+2026-01-22 00:37:55.841 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 00:37:56.359 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.512 s, sync=0.002 s, total=0.519 s; sync files=6, longest=0.001 s, average=0.001 s; distance=7 kB, estimate=2330 kB; lsn=0/1CE9E80, redo lsn=0/1CE9E28
+2026-01-22 00:42:55.363 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 00:42:55.471 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=2098 kB; lsn=0/1CEB270, redo lsn=0/1CEB218
+2026-01-22 00:47:55.474 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 00:47:55.988 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.510 s, sync=0.002 s, total=0.515 s; sync files=6, longest=0.001 s, average=0.001 s; distance=6 kB, estimate=1889 kB; lsn=0/1CECDC8, redo lsn=0/1CECD70
+2026-01-22 00:52:55.991 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 00:52:56.815 EST [10787] LOG:  checkpoint complete: wrote 8 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.820 s, sync=0.002 s, total=0.824 s; sync files=6, longest=0.001 s, average=0.001 s; distance=53 kB, estimate=1705 kB; lsn=0/1CFA550, redo lsn=0/1CFA4F8
+2026-01-22 00:57:55.820 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 00:57:55.927 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=1535 kB; lsn=0/1CFACE8, redo lsn=0/1CFAC90
+2026-01-22 01:02:55.930 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 01:02:56.447 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.512 s, sync=0.002 s, total=0.517 s; sync files=6, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=1382 kB; lsn=0/1CFBCC0, redo lsn=0/1CFBC68
+2026-01-22 01:07:55.444 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 01:07:55.548 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.101 s, sync=0.001 s, total=0.105 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=1244 kB; lsn=0/1CFC7E8, redo lsn=0/1CFC790
+2026-01-22 01:12:55.550 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 01:12:56.068 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.511 s, sync=0.002 s, total=0.518 s; sync files=6, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=1120 kB; lsn=0/1CFDC30, redo lsn=0/1CFDBD8
+2026-01-22 01:17:55.069 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 01:17:55.175 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.106 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=1008 kB; lsn=0/1CFEAC0, redo lsn=0/1CFEA68
+2026-01-22 01:22:55.177 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 01:22:55.691 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.509 s, sync=0.001 s, total=0.514 s; sync files=6, longest=0.001 s, average=0.001 s; distance=6 kB, estimate=908 kB; lsn=0/1D00378, redo lsn=0/1D00320
+2026-01-22 01:27:55.693 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 01:27:55.801 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=817 kB; lsn=0/1D01568, redo lsn=0/1D01510
+2026-01-22 01:32:55.804 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 01:32:55.910 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.106 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=736 kB; lsn=0/1D02928, redo lsn=0/1D028D0
+2026-01-22 01:37:55.911 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 01:37:56.425 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.510 s, sync=0.001 s, total=0.514 s; sync files=6, longest=0.001 s, average=0.001 s; distance=7 kB, estimate=663 kB; lsn=0/1D047F0, redo lsn=0/1D04798
+2026-01-22 01:42:55.424 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 01:42:56.241 EST [10787] LOG:  checkpoint complete: wrote 8 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.812 s, sync=0.001 s, total=0.818 s; sync files=6, longest=0.001 s, average=0.001 s; distance=54 kB, estimate=602 kB; lsn=0/1D12248, redo lsn=0/1D121F0
+2026-01-22 01:47:55.243 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 01:47:55.762 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.511 s, sync=0.001 s, total=0.520 s; sync files=6, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=542 kB; lsn=0/1D133D0, redo lsn=0/1D13378
+2026-01-22 01:52:55.765 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 01:52:55.875 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.111 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=488 kB; lsn=0/1D13CD8, redo lsn=0/1D13C80
+2026-01-22 01:57:55.877 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 01:57:55.986 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=440 kB; lsn=0/1D147B0, redo lsn=0/1D14758
+2026-01-22 02:02:55.988 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 02:02:56.504 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.510 s, sync=0.001 s, total=0.517 s; sync files=6, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=396 kB; lsn=0/1D15F30, redo lsn=0/1D15ED8
+2026-01-22 02:07:55.506 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 02:07:55.618 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.112 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=357 kB; lsn=0/1D16D78, redo lsn=0/1D16D20
+2026-01-22 02:12:55.624 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 02:12:56.143 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.513 s, sync=0.001 s, total=0.520 s; sync files=6, longest=0.001 s, average=0.001 s; distance=7 kB, estimate=322 kB; lsn=0/1D18980, redo lsn=0/1D18928
+2026-01-22 02:17:55.146 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 02:17:55.253 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=290 kB; lsn=0/1D19B20, redo lsn=0/1D19AC8
+2026-01-22 02:22:55.256 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 02:22:55.774 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.511 s, sync=0.001 s, total=0.519 s; sync files=6, longest=0.001 s, average=0.001 s; distance=8 kB, estimate=262 kB; lsn=0/1D1BB78, redo lsn=0/1D1BB20
+2026-01-22 02:27:55.777 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 02:27:55.885 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=236 kB; lsn=0/1D1D0A0, redo lsn=0/1D1D048
+2026-01-22 02:32:55.888 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 02:32:56.402 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.511 s, sync=0.001 s, total=0.515 s; sync files=5, longest=0.001 s, average=0.001 s; distance=31 kB, estimate=216 kB; lsn=0/1D24CA8, redo lsn=0/1D24C50
+2026-01-22 02:37:55.405 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 02:37:55.921 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.512 s, sync=0.001 s, total=0.517 s; sync files=6, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=195 kB; lsn=0/1D26190, redo lsn=0/1D26138
+2026-01-22 02:42:55.929 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 02:42:56.036 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=175 kB; lsn=0/1D26A40, redo lsn=0/1D269E8
+2026-01-22 02:47:55.038 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 02:47:55.554 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.511 s, sync=0.001 s, total=0.516 s; sync files=6, longest=0.001 s, average=0.001 s; distance=6 kB, estimate=158 kB; lsn=0/1D28378, redo lsn=0/1D28320
+2026-01-22 02:52:55.556 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 02:52:55.660 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.105 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=143 kB; lsn=0/1D28F90, redo lsn=0/1D28F38
+2026-01-22 02:57:55.664 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 02:57:55.773 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=129 kB; lsn=0/1D29D68, redo lsn=0/1D29D10
+2026-01-22 03:02:55.776 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 03:02:56.301 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.519 s, sync=0.001 s, total=0.526 s; sync files=6, longest=0.001 s, average=0.001 s; distance=7 kB, estimate=117 kB; lsn=0/1D2BCA0, redo lsn=0/1D2BC48
+2026-01-22 03:07:55.305 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 03:07:55.414 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=105 kB; lsn=0/1D2CE00, redo lsn=0/1D2CDA8
+2026-01-22 03:12:55.421 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 03:12:55.943 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.517 s, sync=0.001 s, total=0.523 s; sync files=6, longest=0.001 s, average=0.001 s; distance=8 kB, estimate=96 kB; lsn=0/1D2F1A8, redo lsn=0/1D2F150
+2026-01-22 03:17:55.948 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 03:17:56.058 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.111 s; sync files=2, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=87 kB; lsn=0/1D30678, redo lsn=0/1D30620
+2026-01-22 03:22:55.062 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 03:22:55.990 EST [10787] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.925 s, sync=0.002 s, total=0.929 s; sync files=9, longest=0.001 s, average=0.001 s; distance=36 kB, estimate=81 kB; lsn=0/1D39690, redo lsn=0/1D39638
+2026-01-22 03:27:55.994 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 03:27:56.101 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=73 kB; lsn=0/1D39D30, redo lsn=0/1D39CD8
+2026-01-22 03:32:55.105 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 03:32:55.211 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=66 kB; lsn=0/1D3A5A0, redo lsn=0/1D3A548
+2026-01-22 03:37:55.215 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 03:37:55.731 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.510 s, sync=0.002 s, total=0.517 s; sync files=6, longest=0.001 s, average=0.001 s; distance=7 kB, estimate=60 kB; lsn=0/1D3C220, redo lsn=0/1D3C1C8
+2026-01-22 03:42:55.726 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 03:42:55.835 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=54 kB; lsn=0/1D3CDE8, redo lsn=0/1D3CD90
+2026-01-22 03:47:55.837 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 03:47:56.356 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.511 s, sync=0.001 s, total=0.519 s; sync files=6, longest=0.001 s, average=0.001 s; distance=8 kB, estimate=50 kB; lsn=0/1D3EEC8, redo lsn=0/1D3EE70
+2026-01-22 03:52:55.359 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 03:52:55.467 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=45 kB; lsn=0/1D3FDF8, redo lsn=0/1D3FDA0
+2026-01-22 03:57:59.124 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 03:57:59.231 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=41 kB; lsn=0/1D40EF8, redo lsn=0/1D40EA0
+2026-01-22 04:03:20.195 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 04:03:20.713 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.513 s, sync=0.001 s, total=0.518 s; sync files=6, longest=0.001 s, average=0.001 s; distance=9 kB, estimate=38 kB; lsn=0/1D435C8, redo lsn=0/1D43570
+2026-01-22 04:08:38.225 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 04:08:38.329 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.105 s; sync files=2, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=35 kB; lsn=0/1D44A10, redo lsn=0/1D449B8
+2026-01-22 04:13:57.226 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 04:13:57.746 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.520 s; sync files=6, longest=0.001 s, average=0.001 s; distance=10 kB, estimate=32 kB; lsn=0/1D47500, redo lsn=0/1D474A8
+2026-01-22 04:19:19.935 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 04:19:20.453 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.513 s, sync=0.001 s, total=0.518 s; sync files=5, longest=0.001 s, average=0.001 s; distance=28 kB, estimate=32 kB; lsn=0/1D4E5D0, redo lsn=0/1D4E578
+2026-01-22 04:24:35.271 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 04:24:35.789 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.514 s, sync=0.001 s, total=0.519 s; sync files=6, longest=0.001 s, average=0.001 s; distance=7 kB, estimate=29 kB; lsn=0/1D503E8, redo lsn=0/1D50390
+2026-01-22 04:29:50.015 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 04:29:50.122 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=26 kB; lsn=0/1D50DA0, redo lsn=0/1D50D48
+2026-01-22 04:35:11.641 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 04:35:12.154 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.509 s, sync=0.001 s, total=0.514 s; sync files=6, longest=0.001 s, average=0.001 s; distance=8 kB, estimate=25 kB; lsn=0/1D53010, redo lsn=0/1D52FB8
+2026-01-22 04:40:36.819 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 04:40:36.925 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=22 kB; lsn=0/1D53D38, redo lsn=0/1D53CE0
+2026-01-22 04:45:59.391 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 04:45:59.498 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=21 kB; lsn=0/1D54C30, redo lsn=0/1D54BD8
+2026-01-22 04:51:21.858 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 04:51:22.375 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.514 s, sync=0.001 s, total=0.517 s; sync files=6, longest=0.001 s, average=0.001 s; distance=10 kB, estimate=19 kB; lsn=0/1D57498, redo lsn=0/1D57440
+2026-01-22 04:56:42.070 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 04:56:42.176 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.106 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=18 kB; lsn=0/1D58700, redo lsn=0/1D586A8
+2026-01-22 05:02:06.439 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 05:02:07.466 EST [10787] LOG:  checkpoint complete: wrote 10 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.023 s, sync=0.002 s, total=1.028 s; sync files=10, longest=0.001 s, average=0.001 s; distance=35 kB, estimate=35 kB; lsn=0/1D615B8, redo lsn=0/1D61560
+2026-01-22 05:07:27.807 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 05:07:27.912 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.106 s; sync files=2, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=32 kB; lsn=0/1D62B90, redo lsn=0/1D62B38
+2026-01-22 05:12:46.592 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 05:12:47.519 EST [10787] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.925 s, sync=0.001 s, total=0.927 s; sync files=9, longest=0.001 s, average=0.001 s; distance=42 kB, estimate=42 kB; lsn=0/1D6D430, redo lsn=0/1D6D3D8
+2026-01-22 05:18:08.392 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 05:18:08.499 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=38 kB; lsn=0/1D6DBD8, redo lsn=0/1D6DB80
+2026-01-22 05:23:33.110 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 05:23:33.628 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.513 s, sync=0.001 s, total=0.519 s; sync files=6, longest=0.001 s, average=0.001 s; distance=9 kB, estimate=35 kB; lsn=0/1D6FFD8, redo lsn=0/1D6FF80
+2026-01-22 05:28:52.810 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 05:28:52.916 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=31 kB; lsn=0/1D70B08, redo lsn=0/1D70AB0
+2026-01-22 05:34:22.521 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 05:34:22.628 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=29 kB; lsn=0/1D717D8, redo lsn=0/1D71780
+2026-01-22 05:39:47.399 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 05:39:47.921 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.514 s, sync=0.001 s, total=0.522 s; sync files=6, longest=0.001 s, average=0.001 s; distance=10 kB, estimate=27 kB; lsn=0/1D741E8, redo lsn=0/1D74190
+2026-01-22 05:45:16.202 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 05:45:16.309 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=24 kB; lsn=0/1D75228, redo lsn=0/1D751D0
+2026-01-22 05:50:28.957 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 05:50:29.473 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.513 s, sync=0.001 s, total=0.517 s; sync files=6, longest=0.001 s, average=0.001 s; distance=11 kB, estimate=23 kB; lsn=0/1D780A8, redo lsn=0/1D78050
+2026-01-22 05:55:46.019 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 05:55:46.125 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.106 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=21 kB; lsn=0/1D79458, redo lsn=0/1D79400
+2026-01-22 06:01:09.169 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 06:01:09.685 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.509 s, sync=0.001 s, total=0.516 s; sync files=6, longest=0.001 s, average=0.001 s; distance=12 kB, estimate=20 kB; lsn=0/1D7C730, redo lsn=0/1D7C6D8
+2026-01-22 06:06:35.970 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 06:06:36.488 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.513 s, sync=0.001 s, total=0.518 s; sync files=5, longest=0.001 s, average=0.001 s; distance=31 kB, estimate=31 kB; lsn=0/1D846B0, redo lsn=0/1D84658
+2026-01-22 06:11:58.323 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 06:11:58.840 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.512 s, sync=0.001 s, total=0.517 s; sync files=6, longest=0.001 s, average=0.001 s; distance=9 kB, estimate=29 kB; lsn=0/1D86C40, redo lsn=0/1D86BE8
+2026-01-22 06:17:21.324 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 06:17:21.431 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=26 kB; lsn=0/1D87548, redo lsn=0/1D874F0
+2026-01-22 06:22:40.964 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 06:22:41.480 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.512 s, sync=0.001 s, total=0.517 s; sync files=6, longest=0.001 s, average=0.001 s; distance=10 kB, estimate=25 kB; lsn=0/1D89F30, redo lsn=0/1D89ED8
+2026-01-22 06:27:55.727 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 06:27:55.836 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=23 kB; lsn=0/1D8ABC0, redo lsn=0/1D8AB68
+2026-01-22 06:33:27.106 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 06:33:27.213 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.104 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=21 kB; lsn=0/1D8B9F0, redo lsn=0/1D8B998
+2026-01-22 06:38:48.364 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 06:38:51.597 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=3.231 s, sync=0.001 s, total=3.233 s; sync files=6, longest=0.001 s, average=0.001 s; distance=11 kB, estimate=20 kB; lsn=0/1D8E9E8, redo lsn=0/1D8E990
+2026-01-22 06:44:09.422 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 06:44:09.531 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=18 kB; lsn=0/1D8FB88, redo lsn=0/1D8FB30
+2026-01-22 06:49:28.644 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 06:49:29.165 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.521 s; sync files=6, longest=0.001 s, average=0.001 s; distance=13 kB, estimate=18 kB; lsn=0/1D92FF0, redo lsn=0/1D92F98
+2026-01-22 06:54:51.715 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 06:54:51.822 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=16 kB; lsn=0/1D94518, redo lsn=0/1D944C0
+2026-01-22 07:00:13.217 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 07:00:14.516 EST [10787] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.297 s, sync=0.002 s, total=1.300 s; sync files=9, longest=0.001 s, average=0.001 s; distance=40 kB, estimate=40 kB; lsn=0/1D9E8F0, redo lsn=0/1D9E898
+2026-01-22 07:05:31.143 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 07:05:31.252 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=37 kB; lsn=0/1D9EFE8, redo lsn=0/1D9EF90
+2026-01-22 07:10:48.507 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 07:10:49.025 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.514 s, sync=0.001 s, total=0.518 s; sync files=6, longest=0.001 s, average=0.001 s; distance=10 kB, estimate=34 kB; lsn=0/1DA1B60, redo lsn=0/1DA1B08
+2026-01-22 07:16:06.573 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 07:16:06.679 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.106 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=31 kB; lsn=0/1DA25E0, redo lsn=0/1DA2588
+2026-01-22 07:21:27.102 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 07:21:27.210 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=28 kB; lsn=0/1DA3200, redo lsn=0/1DA31A8
+2026-01-22 07:26:49.130 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 07:26:49.651 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.513 s, sync=0.001 s, total=0.521 s; sync files=6, longest=0.001 s, average=0.001 s; distance=12 kB, estimate=26 kB; lsn=0/1DA6388, redo lsn=0/1DA6330
+2026-01-22 07:32:11.426 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 07:32:11.536 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=24 kB; lsn=0/1DA7318, redo lsn=0/1DA72C0
+2026-01-22 07:37:32.369 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 07:37:32.891 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.514 s, sync=0.001 s, total=0.522 s; sync files=6, longest=0.001 s, average=0.001 s; distance=13 kB, estimate=23 kB; lsn=0/1DAA910, redo lsn=0/1DAA8B8
+2026-01-22 07:43:00.618 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 07:43:00.728 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=21 kB; lsn=0/1DABC10, redo lsn=0/1DABBB8
+2026-01-22 07:48:21.850 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 07:48:22.374 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.517 s, sync=0.001 s, total=0.524 s; sync files=6, longest=0.001 s, average=0.001 s; distance=14 kB, estimate=20 kB; lsn=0/1DAF660, redo lsn=0/1DAF608
+2026-01-22 07:53:41.841 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 07:53:42.360 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.512 s, sync=0.001 s, total=0.520 s; sync files=5, longest=0.001 s, average=0.001 s; distance=33 kB, estimate=33 kB; lsn=0/1DB7AE0, redo lsn=0/1DB7A88
+2026-01-22 07:59:00.639 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 07:59:01.160 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.516 s, sync=0.001 s, total=0.521 s; sync files=6, longest=0.001 s, average=0.001 s; distance=11 kB, estimate=30 kB; lsn=0/1DBA800, redo lsn=0/1DBA7A8
+2026-01-22 08:04:18.685 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 08:04:18.794 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=28 kB; lsn=0/1DBB058, redo lsn=0/1DBB000
+2026-01-22 08:09:40.436 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 08:09:40.542 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=25 kB; lsn=0/1DBBA68, redo lsn=0/1DBBA10
+2026-01-22 08:15:05.405 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 08:15:05.926 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.522 s; sync files=6, longest=0.001 s, average=0.001 s; distance=12 kB, estimate=24 kB; lsn=0/1DBED80, redo lsn=0/1DBED28
+2026-01-22 08:20:32.166 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 08:20:32.272 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=22 kB; lsn=0/1DBFB00, redo lsn=0/1DBFAA8
+2026-01-22 08:25:48.576 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 08:25:49.094 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.512 s, sync=0.001 s, total=0.519 s; sync files=6, longest=0.001 s, average=0.001 s; distance=13 kB, estimate=21 kB; lsn=0/1DC3288, redo lsn=0/1DC3230
+2026-01-22 08:31:07.324 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 08:31:07.432 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=19 kB; lsn=0/1DC4390, redo lsn=0/1DC4338
+2026-01-22 08:36:29.020 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 08:36:29.537 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.513 s, sync=0.001 s, total=0.517 s; sync files=6, longest=0.001 s, average=0.001 s; distance=14 kB, estimate=19 kB; lsn=0/1DC7F58, redo lsn=0/1DC7F00
+2026-01-22 08:41:51.978 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 08:41:52.085 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=17 kB; lsn=0/1DC93D0, redo lsn=0/1DC9378
+2026-01-22 08:47:01.507 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 08:47:02.025 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.514 s, sync=0.001 s, total=0.519 s; sync files=6, longest=0.001 s, average=0.001 s; distance=16 kB, estimate=17 kB; lsn=0/1DCD408, redo lsn=0/1DCD3B0
+2026-01-22 08:52:24.443 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 08:52:24.963 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.521 s; sync files=5, longest=0.001 s, average=0.001 s; distance=29 kB, estimate=29 kB; lsn=0/1DD4A50, redo lsn=0/1DD49F8
+2026-01-22 08:58:51.923 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 08:58:52.214 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.291 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=26 kB; lsn=0/1DD5250, redo lsn=0/1DD51F8
+2026-01-22 09:04:09.949 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 09:04:10.463 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.510 s, sync=0.001 s, total=0.515 s; sync files=6, longest=0.001 s, average=0.001 s; distance=13 kB, estimate=25 kB; lsn=0/1DD86F8, redo lsn=0/1DD86A0
+2026-01-22 09:09:32.464 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 09:09:32.570 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.106 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=23 kB; lsn=0/1DD9268, redo lsn=0/1DD9210
+2026-01-22 09:14:54.512 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 09:14:55.035 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.516 s, sync=0.001 s, total=0.524 s; sync files=6, longest=0.001 s, average=0.001 s; distance=14 kB, estimate=22 kB; lsn=0/1DDCB68, redo lsn=0/1DDCB10
+2026-01-22 09:20:18.093 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 09:20:18.199 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.101 s, sync=0.001 s, total=0.106 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=20 kB; lsn=0/1DDDA48, redo lsn=0/1DDD9F0
+2026-01-22 09:25:38.592 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 09:25:39.114 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.516 s, sync=0.001 s, total=0.522 s; sync files=6, longest=0.001 s, average=0.001 s; distance=15 kB, estimate=19 kB; lsn=0/1DE17B8, redo lsn=0/1DE1760
+2026-01-22 09:30:52.760 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 09:30:52.870 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.111 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=18 kB; lsn=0/1DE2A20, redo lsn=0/1DE29C8
+2026-01-22 09:36:10.914 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 09:36:11.433 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.513 s, sync=0.001 s, total=0.520 s; sync files=6, longest=0.001 s, average=0.001 s; distance=16 kB, estimate=18 kB; lsn=0/1DE6BE8, redo lsn=0/1DE6B90
+2026-01-22 09:41:34.221 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 09:41:34.330 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=16 kB; lsn=0/1DE81C0, redo lsn=0/1DE8168
+2026-01-22 09:46:54.905 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 09:46:55.844 EST [10787] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.932 s, sync=0.001 s, total=0.940 s; sync files=9, longest=0.001 s, average=0.001 s; distance=46 kB, estimate=46 kB; lsn=0/1DF3C28, redo lsn=0/1DF3BD0
+2026-01-22 09:52:13.561 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 09:52:13.671 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.111 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=42 kB; lsn=0/1DF43E8, redo lsn=0/1DF4390
+2026-01-22 09:58:37.695 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 09:58:38.212 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.512 s, sync=0.001 s, total=0.517 s; sync files=6, longest=0.001 s, average=0.001 s; distance=14 kB, estimate=39 kB; lsn=0/1DF7CC0, redo lsn=0/1DF7C68
+2026-01-22 10:04:11.229 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 10:04:11.334 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.101 s, sync=0.001 s, total=0.106 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=35 kB; lsn=0/1DF87F0, redo lsn=0/1DF8798
+2026-01-22 10:09:29.751 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 10:09:29.858 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=32 kB; lsn=0/1DF94C0, redo lsn=0/1DF9468
+2026-01-22 10:14:51.946 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 10:14:52.467 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.522 s; sync files=6, longest=0.001 s, average=0.001 s; distance=15 kB, estimate=30 kB; lsn=0/1DFD3A8, redo lsn=0/1DFD350
+2026-01-22 10:20:09.691 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 10:20:09.799 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=28 kB; lsn=0/1DFE400, redo lsn=0/1DFE3A8
+2026-01-22 10:26:36.563 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 10:26:37.085 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.522 s; sync files=6, longest=0.001 s, average=0.001 s; distance=16 kB, estimate=26 kB; lsn=0/1E02758, redo lsn=0/1E02700
+2026-01-22 10:31:52.601 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 10:31:52.708 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=24 kB; lsn=0/1E03B08, redo lsn=0/1E03AB0
+2026-01-22 10:37:20.830 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 10:37:21.656 EST [10787] LOG:  checkpoint complete: wrote 8 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.821 s, sync=0.002 s, total=0.827 s; sync files=8, longest=0.001 s, average=0.001 s; distance=32 kB, estimate=32 kB; lsn=0/1E0BD98, redo lsn=0/1E0BD40
+2026-01-22 10:42:39.428 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 10:42:39.946 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.513 s, sync=0.001 s, total=0.518 s; sync files=5, longest=0.001 s, average=0.001 s; distance=35 kB, estimate=35 kB; lsn=0/1E14B48, redo lsn=0/1E14AF0
+2026-01-22 10:48:01.578 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 10:48:02.299 EST [10787] LOG:  checkpoint complete: wrote 7 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.716 s, sync=0.001 s, total=0.721 s; sync files=7, longest=0.001 s, average=0.001 s; distance=22 kB, estimate=34 kB; lsn=0/1E1A650, redo lsn=0/1E1A5F8
+2026-01-22 10:53:27.486 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 10:53:27.594 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=30 kB; lsn=0/1E1AF58, redo lsn=0/1E1AF00
+2026-01-22 10:58:47.760 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 10:58:48.282 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.520 s, sync=0.001 s, total=0.522 s; sync files=6, longest=0.001 s, average=0.001 s; distance=7 kB, estimate=28 kB; lsn=0/1E1CE50, redo lsn=0/1E1CDF8
+2026-01-22 11:04:11.314 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 11:04:11.423 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=26 kB; lsn=0/1E1DAC8, redo lsn=0/1E1DA70
+2026-01-22 11:09:39.951 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 11:09:40.057 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=23 kB; lsn=0/1E1E910, redo lsn=0/1E1E8B8
+2026-01-22 11:15:02.998 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 11:15:03.517 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.520 s; sync files=6, longest=0.001 s, average=0.001 s; distance=9 kB, estimate=22 kB; lsn=0/1E20E00, redo lsn=0/1E20DA8
+2026-01-22 11:20:32.553 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 11:20:32.663 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=20 kB; lsn=0/1E21FA0, redo lsn=0/1E21F48
+2026-01-22 11:25:52.508 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 11:25:53.030 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.517 s, sync=0.001 s, total=0.523 s; sync files=6, longest=0.001 s, average=0.001 s; distance=10 kB, estimate=19 kB; lsn=0/1E24918, redo lsn=0/1E248C0
+2026-01-22 11:31:12.084 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 11:31:12.194 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=18 kB; lsn=0/1E25E28, redo lsn=0/1E25DD0
+2026-01-22 11:36:28.070 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 11:36:29.002 EST [10787] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.925 s, sync=0.002 s, total=0.933 s; sync files=9, longest=0.001 s, average=0.001 s; distance=38 kB, estimate=38 kB; lsn=0/1E2F940, redo lsn=0/1E2F8E8
+2026-01-22 11:41:49.954 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 11:41:50.063 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=35 kB; lsn=0/1E30050, redo lsn=0/1E2FFE0
+2026-01-22 11:48:11.126 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 11:48:11.648 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.516 s, sync=0.001 s, total=0.523 s; sync files=6, longest=0.001 s, average=0.001 s; distance=8 kB, estimate=32 kB; lsn=0/1E320D8, redo lsn=0/1E32080
+2026-01-22 11:53:39.854 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 11:53:39.964 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.111 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=29 kB; lsn=0/1E32B40, redo lsn=0/1E32AE8
+2026-01-22 11:59:02.847 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 11:59:03.371 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.518 s, sync=0.001 s, total=0.525 s; sync files=6, longest=0.001 s, average=0.001 s; distance=9 kB, estimate=27 kB; lsn=0/1E35020, redo lsn=0/1E34FC8
+2026-01-22 12:04:21.623 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 12:04:21.731 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.104 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=24 kB; lsn=0/1E35DF8, redo lsn=0/1E35DA0
+2026-01-22 12:09:41.515 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 12:09:41.623 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.101 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=22 kB; lsn=0/1E36DA0, redo lsn=0/1E36D48
+2026-01-22 12:14:55.724 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 12:14:56.247 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.517 s, sync=0.001 s, total=0.523 s; sync files=6, longest=0.001 s, average=0.001 s; distance=10 kB, estimate=21 kB; lsn=0/1E39878, redo lsn=0/1E39820
+2026-01-22 12:20:20.133 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 12:20:20.241 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=19 kB; lsn=0/1E3AB90, redo lsn=0/1E3AB38
+2026-01-22 12:25:33.556 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 12:25:34.080 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.517 s, sync=0.001 s, total=0.524 s; sync files=6, longest=0.001 s, average=0.001 s; distance=11 kB, estimate=19 kB; lsn=0/1E3DAD8, redo lsn=0/1E3DA80
+2026-01-22 12:30:52.492 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 12:30:53.012 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.513 s, sync=0.001 s, total=0.520 s; sync files=5, longest=0.001 s, average=0.001 s; distance=33 kB, estimate=33 kB; lsn=0/1E46190, redo lsn=0/1E46138
+2026-01-22 12:36:11.991 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 12:36:12.517 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.520 s, sync=0.001 s, total=0.527 s; sync files=6, longest=0.001 s, average=0.001 s; distance=8 kB, estimate=31 kB; lsn=0/1E483A8, redo lsn=0/1E48350
+2026-01-22 12:41:29.267 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 12:41:29.376 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=28 kB; lsn=0/1E48C00, redo lsn=0/1E48BA8
+2026-01-22 12:46:53.060 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 12:46:53.584 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.517 s, sync=0.001 s, total=0.525 s; sync files=6, longest=0.001 s, average=0.001 s; distance=9 kB, estimate=26 kB; lsn=0/1E4B270, redo lsn=0/1E4B218
+2026-01-22 12:52:11.337 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 12:52:11.447 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.104 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=24 kB; lsn=0/1E4BE38, redo lsn=0/1E4BDE0
+2026-01-22 12:57:30.579 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 12:57:30.687 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=21 kB; lsn=0/1E4CBD0, redo lsn=0/1E4CB78
+2026-01-22 13:02:57.037 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 13:02:57.561 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.517 s, sync=0.001 s, total=0.525 s; sync files=6, longest=0.001 s, average=0.001 s; distance=11 kB, estimate=20 kB; lsn=0/1E4F838, redo lsn=0/1E4F7E0
+2026-01-22 13:08:22.747 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 13:08:22.855 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=19 kB; lsn=0/1E50940, redo lsn=0/1E508E8
+2026-01-22 13:13:45.491 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 13:13:46.016 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.518 s, sync=0.001 s, total=0.526 s; sync files=6, longest=0.001 s, average=0.001 s; distance=12 kB, estimate=18 kB; lsn=0/1E53A18, redo lsn=0/1E539C0
+2026-01-22 13:19:03.412 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 13:19:03.519 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.101 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=17 kB; lsn=0/1E54E90, redo lsn=0/1E54E38
+2026-01-22 13:24:18.945 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 13:24:19.466 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.522 s; sync files=6, longest=0.001 s, average=0.001 s; distance=13 kB, estimate=16 kB; lsn=0/1E583D8, redo lsn=0/1E58380
+2026-01-22 13:29:40.869 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 13:29:41.388 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.512 s, sync=0.001 s, total=0.519 s; sync files=5, longest=0.001 s, average=0.001 s; distance=30 kB, estimate=30 kB; lsn=0/1E5FD00, redo lsn=0/1E5FCA8
+2026-01-22 13:34:59.798 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 13:35:00.315 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.514 s, sync=0.001 s, total=0.518 s; sync files=6, longest=0.001 s, average=0.001 s; distance=10 kB, estimate=28 kB; lsn=0/1E62518, redo lsn=0/1E624C0
+2026-01-22 13:40:14.622 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 13:40:14.733 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.111 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=25 kB; lsn=0/1E62ED0, redo lsn=0/1E62E78
+2026-01-22 13:45:33.432 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 13:45:33.544 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.112 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=23 kB; lsn=0/1E63A40, redo lsn=0/1E639E8
+2026-01-22 13:50:49.538 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 13:50:50.056 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.514 s, sync=0.001 s, total=0.518 s; sync files=6, longest=0.001 s, average=0.001 s; distance=11 kB, estimate=22 kB; lsn=0/1E66858, redo lsn=0/1E66800
+2026-01-22 13:56:06.202 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 13:56:06.312 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.111 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=20 kB; lsn=0/1E67738, redo lsn=0/1E676E0
+2026-01-22 14:02:25.593 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 14:02:26.112 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.513 s, sync=0.001 s, total=0.520 s; sync files=6, longest=0.001 s, average=0.001 s; distance=12 kB, estimate=19 kB; lsn=0/1E6A9C8, redo lsn=0/1E6A970
+2026-01-22 14:07:45.226 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 14:07:45.335 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=18 kB; lsn=0/1E6BC18, redo lsn=0/1E6BBC0
+2026-01-22 14:13:06.548 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 14:13:07.066 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.519 s; sync files=6, longest=0.001 s, average=0.001 s; distance=13 kB, estimate=17 kB; lsn=0/1E6F308, redo lsn=0/1E6F2B0
+2026-01-22 14:18:27.019 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 14:18:27.130 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.111 s; sync files=2, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=16 kB; lsn=0/1E708E0, redo lsn=0/1E70888
+2026-01-22 14:23:51.119 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 14:23:52.054 EST [10787] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.928 s, sync=0.001 s, total=0.935 s; sync files=9, longest=0.001 s, average=0.001 s; distance=41 kB, estimate=41 kB; lsn=0/1E7AE88, redo lsn=0/1E7AE30
+2026-01-22 14:29:09.109 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 14:29:09.217 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=37 kB; lsn=0/1E7B630, redo lsn=0/1E7B5D8
+2026-01-22 14:34:37.186 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 14:34:37.706 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.514 s, sync=0.001 s, total=0.520 s; sync files=6, longest=0.001 s, average=0.001 s; distance=11 kB, estimate=34 kB; lsn=0/1E7E458, redo lsn=0/1E7E400
+2026-01-22 14:39:56.254 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 14:39:56.364 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.111 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=31 kB; lsn=0/1E7EF70, redo lsn=0/1E7EF18
+2026-01-22 14:45:18.433 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 14:45:18.543 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.111 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=28 kB; lsn=0/1E7FC40, redo lsn=0/1E7FBE8
+2026-01-22 14:50:41.511 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 14:50:42.030 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.514 s, sync=0.001 s, total=0.520 s; sync files=6, longest=0.001 s, average=0.001 s; distance=13 kB, estimate=27 kB; lsn=0/1E83068, redo lsn=0/1E83010
+2026-01-22 14:55:56.930 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 14:55:57.036 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=24 kB; lsn=0/1E840C0, redo lsn=0/1E84068
+2026-01-22 15:01:17.711 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 15:01:18.231 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.521 s; sync files=6, longest=0.001 s, average=0.001 s; distance=14 kB, estimate=23 kB; lsn=0/1E87948, redo lsn=0/1E878F0
+2026-01-22 15:06:34.237 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 15:06:34.345 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=21 kB; lsn=0/1E88CD8, redo lsn=0/1E88C80
+2026-01-22 15:11:58.310 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 15:11:58.830 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.520 s; sync files=6, longest=0.001 s, average=0.001 s; distance=15 kB, estimate=21 kB; lsn=0/1E8C9D8, redo lsn=0/1E8C980
+2026-01-22 15:17:15.564 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 15:17:16.084 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.514 s, sync=0.001 s, total=0.520 s; sync files=5, longest=0.001 s, average=0.001 s; distance=33 kB, estimate=33 kB; lsn=0/1E94E48, redo lsn=0/1E94DF0
+2026-01-22 15:22:37.068 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 15:22:37.591 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.518 s, sync=0.001 s, total=0.524 s; sync files=6, longest=0.001 s, average=0.001 s; distance=11 kB, estimate=30 kB; lsn=0/1E97E08, redo lsn=0/1E97DB0
+2026-01-22 15:28:00.188 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 15:28:00.296 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=28 kB; lsn=0/1E98728, redo lsn=0/1E986D0
+2026-01-22 15:33:23.209 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 15:33:23.320 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.112 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=25 kB; lsn=0/1E991E8, redo lsn=0/1E99190
+2026-01-22 15:38:42.777 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 15:38:43.295 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.519 s; sync files=6, longest=0.001 s, average=0.001 s; distance=13 kB, estimate=24 kB; lsn=0/1E9C7C0, redo lsn=0/1E9C768
+2026-01-22 15:44:09.106 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 15:44:09.213 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=22 kB; lsn=0/1E9D5F0, redo lsn=0/1E9D598
+2026-01-22 15:49:27.611 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 15:49:28.126 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.513 s, sync=0.001 s, total=0.516 s; sync files=6, longest=0.001 s, average=0.001 s; distance=14 kB, estimate=21 kB; lsn=0/1EA1040, redo lsn=0/1EA0FE8
+2026-01-22 15:54:48.536 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 15:54:48.643 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.108 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=19 kB; lsn=0/1EA21F8, redo lsn=0/1EA21A0
+2026-01-22 16:00:05.279 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 16:00:05.800 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.514 s, sync=0.001 s, total=0.522 s; sync files=6, longest=0.001 s, average=0.001 s; distance=15 kB, estimate=19 kB; lsn=0/1EA60A8, redo lsn=0/1EA6018
+2026-01-22 16:05:26.014 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 16:05:26.123 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=17 kB; lsn=0/1EA75B8, redo lsn=0/1EA7560
+2026-01-22 16:10:46.014 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 16:10:46.939 EST [10787] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.923 s, sync=0.001 s, total=0.926 s; sync files=9, longest=0.001 s, average=0.001 s; distance=44 kB, estimate=44 kB; lsn=0/1EB28E8, redo lsn=0/1EB2890
+2026-01-22 16:16:10.031 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 16:16:10.140 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=40 kB; lsn=0/1EB2FE0, redo lsn=0/1EB2F88
+2026-01-22 16:21:21.760 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 16:21:21.867 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=36 kB; lsn=0/1EB3890, redo lsn=0/1EB3838
+2026-01-22 16:26:42.780 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 16:26:43.299 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.514 s, sync=0.001 s, total=0.520 s; sync files=6, longest=0.001 s, average=0.001 s; distance=13 kB, estimate=34 kB; lsn=0/1EB7018, redo lsn=0/1EB6FC0
+2026-01-22 16:32:02.695 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 16:32:02.804 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=31 kB; lsn=0/1EB7C38, redo lsn=0/1EB7BE0
+2026-01-22 16:37:16.103 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 16:37:16.615 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.510 s, sync=0.001 s, total=0.513 s; sync files=6, longest=0.001 s, average=0.001 s; distance=15 kB, estimate=29 kB; lsn=0/1EBB948, redo lsn=0/1EBB8F0
+2026-01-22 16:52:16.617 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 16:52:18.151 EST [10787] LOG:  checkpoint complete: wrote 15 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.527 s, sync=0.001 s, total=1.535 s; sync files=11, longest=0.001 s, average=0.001 s; distance=90 kB, estimate=90 kB; lsn=0/1ED2498, redo lsn=0/1ED2100
+2026-01-22 16:57:16.152 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 16:57:16.261 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=81 kB; lsn=0/1ED2D80, redo lsn=0/1ED2D28
+2026-01-22 16:58:01.432 EST [10695] LOG:  received SIGHUP, reloading configuration files
+2026-01-22 17:02:16.439 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 17:02:17.776 EST [10787] LOG:  checkpoint complete: wrote 13 buffers (0.1%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.332 s, sync=0.002 s, total=1.337 s; sync files=11, longest=0.001 s, average=0.001 s; distance=72 kB, estimate=80 kB; lsn=0/1EE5510, redo lsn=0/1EE4EA8
+2026-01-22 17:07:16.784 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 17:07:17.604 EST [10787] LOG:  checkpoint complete: wrote 8 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.813 s, sync=0.001 s, total=0.820 s; sync files=6, longest=0.001 s, average=0.001 s; distance=62 kB, estimate=78 kB; lsn=0/1EF4780, redo lsn=0/1EF4728
+2026-01-22 17:12:20.603 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 17:12:21.530 EST [10787] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.921 s, sync=0.002 s, total=0.927 s; sync files=9, longest=0.001 s, average=0.001 s; distance=50 kB, estimate=75 kB; lsn=0/1F01818, redo lsn=0/1F011D0
+2026-01-22 17:17:20.532 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 17:17:21.352 EST [10787] LOG:  checkpoint complete: wrote 8 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.815 s, sync=0.001 s, total=0.821 s; sync files=6, longest=0.001 s, average=0.001 s; distance=63 kB, estimate=74 kB; lsn=0/1F11200, redo lsn=0/1F111A8
+2026-01-22 17:22:20.354 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 17:22:21.588 EST [10787] LOG:  checkpoint complete: wrote 12 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.228 s, sync=0.002 s, total=1.234 s; sync files=10, longest=0.001 s, average=0.001 s; distance=74 kB, estimate=74 kB; lsn=0/1F23CD0, redo lsn=0/1F23C78
+2026-01-22 17:27:20.590 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 17:27:21.106 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.511 s, sync=0.002 s, total=0.516 s; sync files=5, longest=0.001 s, average=0.001 s; distance=38 kB, estimate=71 kB; lsn=0/1F2D820, redo lsn=0/1F2D7C8
+2026-01-22 17:32:20.108 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 17:32:20.617 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.507 s, sync=0.001 s, total=0.509 s; sync files=5, longest=0.001 s, average=0.001 s; distance=39 kB, estimate=67 kB; lsn=0/1F37638, redo lsn=0/1F375E0
+2026-01-22 17:37:20.618 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 17:37:21.543 EST [10787] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.922 s, sync=0.001 s, total=0.925 s; sync files=9, longest=0.001 s, average=0.001 s; distance=53 kB, estimate=66 kB; lsn=0/1F44B70, redo lsn=0/1F44B18
+2026-01-22 17:42:20.545 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 17:42:21.058 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.512 s, sync=0.001 s, total=0.514 s; sync files=5, longest=0.001 s, average=0.001 s; distance=38 kB, estimate=63 kB; lsn=0/1F4E718, redo lsn=0/1F4E6C0
+2026-01-22 17:47:20.061 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 17:47:21.290 EST [10787] LOG:  checkpoint complete: wrote 12 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.225 s, sync=0.001 s, total=1.229 s; sync files=10, longest=0.001 s, average=0.001 s; distance=76 kB, estimate=76 kB; lsn=0/1F619B8, redo lsn=0/1F61960
+2026-01-22 17:52:20.291 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 17:52:21.110 EST [10787] LOG:  checkpoint complete: wrote 8 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.814 s, sync=0.002 s, total=0.819 s; sync files=6, longest=0.001 s, average=0.001 s; distance=64 kB, estimate=75 kB; lsn=0/1F71D70, redo lsn=0/1F71D18
+2026-01-22 17:57:20.112 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 17:57:20.625 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.511 s, sync=0.001 s, total=0.514 s; sync files=5, longest=0.001 s, average=0.001 s; distance=41 kB, estimate=72 kB; lsn=0/1F7C510, redo lsn=0/1F7C4B8
+2026-01-22 18:02:20.627 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 18:02:21.554 EST [10787] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.924 s, sync=0.001 s, total=0.927 s; sync files=9, longest=0.001 s, average=0.001 s; distance=48 kB, estimate=69 kB; lsn=0/1F88748, redo lsn=0/1F886F0
+2026-01-22 18:07:20.557 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 18:07:20.767 EST [10787] LOG:  checkpoint complete: wrote 2 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.204 s, sync=0.001 s, total=0.212 s; sync files=3, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=63 kB; lsn=0/1F89740, redo lsn=0/1F896E8
+2026-01-22 18:12:20.770 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 18:12:21.685 EST [10787] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.914 s, sync=0.001 s, total=0.916 s; sync files=9, longest=0.001 s, average=0.001 s; distance=52 kB, estimate=62 kB; lsn=0/1F96840, redo lsn=0/1F967E8
+2026-01-22 23:07:08.479 EST [4549] FATAL:  role "bank_user" does not exist
+2026-01-22 23:07:08.484 EST [4550] FATAL:  role "bank_user" does not exist
+2026-01-22 23:08:30.431 EST [6188] FATAL:  database "alkicorp" does not exist
+2026-01-22 23:12:20.984 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 23:13:59.626 EST [10787] LOG:  checkpoint complete: wrote 973 buffers (5.9%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=98.628 s, sync=0.010 s, total=98.643 s; sync files=308, longest=0.001 s, average=0.001 s; distance=4452 kB, estimate=4452 kB; lsn=0/23EFA68, redo lsn=0/23EF9D8
+2026-01-22 23:15:07.539 EST [12316] ERROR:  permission denied to create role
+2026-01-22 23:15:07.539 EST [12316] DETAIL:  Only roles with the CREATEROLE attribute may create roles.
+2026-01-22 23:15:07.539 EST [12316] STATEMENT:  -- 1. Create app role/user (adjust password)
+	CREATE ROLE bank_app LOGIN PASSWORD 'change_me';
+	
+	-- 2. Create database owned by app role
+	CREATE DATABASE bank_db OWNER bank_app;
+2026-01-22 23:16:09.529 EST [12316] ERROR:  permission denied to alter role
+2026-01-22 23:16:09.529 EST [12316] DETAIL:  Only roles with the SUPERUSER attribute may alter roles with the SUPERUSER attribute.
+2026-01-22 23:16:09.529 EST [12316] STATEMENT:  ALTER ROLE alkicorp CREATEROLE;
+2026-01-22 23:17:45.677 EST [17306] FATAL:  database "alkicorp" does not exist
+2026-01-22 23:19:22.416 EST [12316] ERROR:  permission denied for database postgres
+2026-01-22 23:19:22.416 EST [12316] STATEMENT:  CREATE SCHEMA bank AUTHORIZATION bank_user;
+	SET search_path TO bank, public;
+2026-01-22 23:20:34.909 EST [12316] ERROR:  permission denied to alter role
+2026-01-22 23:20:34.909 EST [12316] DETAIL:  Only roles with the CREATEROLE attribute and the ADMIN option on role "bank_user" may alter this role.
+2026-01-22 23:20:34.909 EST [12316] STATEMENT:  ALTER ROLE bank_user CREATEDB CREATEROLE;
+2026-01-22 23:25:43.195 EST [12316] ERROR:  permission denied for database postgres
+2026-01-22 23:25:43.195 EST [12316] STATEMENT:  -- Connect to bank_app in pgAdmin before running this.
+	
+	-- Create schema + set search path for bank_user
+	CREATE SCHEMA IF NOT EXISTS bank AUTHORIZATION bank_user;
+	ALTER ROLE bank_user SET search_path = bank, public;
+	
+	-- USERS
+	CREATE TABLE IF NOT EXISTS bank.users (
+	  id            BIGSERIAL PRIMARY KEY,
+	  email         VARCHAR(255) NOT NULL UNIQUE,
+	  password_hash VARCHAR(255) NOT NULL,
+	  first_name    VARCHAR(100) NOT NULL,
+	  last_name     VARCHAR(100) NOT NULL,
+	  phone         VARCHAR(30),
+	  created_at    TIMESTAMP NOT NULL DEFAULT NOW(),
+	  updated_at    TIMESTAMP NOT NULL DEFAULT NOW()
+	);
+	
+	-- ROLES
+	CREATE TABLE IF NOT EXISTS bank.roles (
+	  id    BIGSERIAL PRIMARY KEY,
+	  name  VARCHAR(50) NOT NULL UNIQUE
+	);
+	
+	-- USER_ROLES (many-to-many)
+	CREATE TABLE IF NOT EXISTS bank.user_roles (
+	  user_id BIGINT NOT NULL REFERENCES bank.users(id) ON DELETE CASCADE,
+	  role_id BIGINT NOT NULL REFERENCES bank.roles(id) ON DELETE CASCADE,
+	  PRIMARY KEY (user_id, role_id)
+	);
+	
+	-- LOAN PRODUCTS
+	CREATE TABLE IF NOT EXISTS bank.loan_products (
+	  id              BIGSERIAL PRIMARY KEY,
+	  name            VARCHAR(200) NOT NULL,
+	  description     TEXT,
+	  interest_rate   NUMERIC(5,2) NOT NULL CHECK (interest_rate >= 0),
+	  min_amount      NUMERIC(14,2) NOT NULL CHECK (min_amount >= 0),
+	  max_amount      NUMERIC(14,2) NOT NULL CHECK (max_amount >= min_amount),
+	  term_months     INTEGER NOT NULL CHECK (term_months > 0),
+	  image_url       TEXT,
+	  is_active       BOOLEAN NOT NULL DEFAULT TRUE,
+	  created_at      TIMESTAMP NOT NULL DEFAULT NOW(),
+	  updated_at      TIMESTAMP NOT NULL DEFAULT NOW()
+	);
+	
+	-- LOAN APPLICATIONS
+	CREATE TABLE IF NOT EXISTS bank.loan_applications (
+	  id                BIGSERIAL PRIMARY KEY,
+	  user_id           BIGINT NOT NULL REFERENCES bank.users(id) ON DELETE CASCADE,
+	  loan_product_id   BIGINT NOT NULL REFERENCES bank.loan_products(id) ON DELETE RESTRICT,
+	  requested_amount  NUMERIC(14,2) NOT NULL CHECK (requested_amount > 0),
+	  term_months       INTEGER NOT NULL CHECK (term_months > 0),
+	  status            VARCHAR(20) NOT NULL,
+	  notes             TEXT,
+	  created_at        TIMESTAMP NOT NULL DEFAULT NOW(),
+	  updated_at        TIMESTAMP NOT NULL DEFAULT NOW(),
+	  CHECK (status IN ('PENDING', 'APPROVED', 'REJECTED'))
+	);
+	
+	-- LOANS (created after approval)
+	CREATE TABLE IF NOT EXISTS bank.loans (
+	  id                BIGSERIAL PRIMARY KEY,
+	  user_id           BIGINT NOT NULL REFERENCES bank.users(id) ON DELETE CASCADE,
+	  loan_product_id   BIGINT NOT NULL REFERENCES bank.loan_products(id) ON DELETE RESTRICT,
+	  application_id    BIGINT UNIQUE REFERENCES bank.loan_applications(id) ON DELETE SET NULL,
+	  principal         NUMERIC(14,2) NOT NULL CHECK (principal > 0),
+	  interest_rate     NUMERIC(5,2) NOT NULL CHECK (interest_rate >= 0),
+	  term_months       INTEGER NOT NULL CHECK (term_months > 0),
+	  start_date        DATE NOT NULL,
+	  status            VARCHAR(20) NOT NULL,
+	  created_at        TIMESTAMP NOT NULL DEFAULT NOW(),
+	  updated_at        TIMESTAMP NOT NULL DEFAULT NOW(),
+	  CHECK (status IN ('ACTIVE', 'PAID', 'DEFAULTED'))
+	);
+	
+	-- LOAN PAYMENTS
+	CREATE TABLE IF NOT EXISTS bank.loan_payments (
+	  id          BIGSERIAL PRIMARY KEY,
+	  loan_id     BIGINT NOT NULL REFERENCES bank.loans(id) ON DELETE CASCADE,
+	  amount      NUMERIC(14,2) NOT NULL CHECK (amount > 0),
+	  paid_at     TIMESTAMP NOT NULL DEFAULT NOW(),
+	  method      VARCHAR(30) NOT NULL,
+	  reference   VARCHAR(100),
+	  created_at  TIMESTAMP NOT NULL DEFAULT NOW()
+	);
+	
+	-- UPLOADS (local files)
+	CREATE TABLE IF NOT EXISTS bank.uploads (
+	  id            BIGSERIAL PRIMARY KEY,
+	  user_id       BIGINT REFERENCES bank.users(id) ON DELETE SET NULL,
+	  filename      VARCHAR(255) NOT NULL,
+	  original_name VARCHAR(255),
+	  mime_type     VARCHAR(100),
+	  file_size     BIGINT CHECK (file_size >= 0),
+	  storage_path  TEXT NOT NULL,
+	  created_at    TIMESTAMP NOT NULL DEFAULT NOW()
+	);
+	
+	-- Helpful indexes
+	CREATE INDEX IF NOT EXISTS idx_loan_applications_user ON bank.loan_applications(user_id);
+	CREATE INDEX IF NOT EXISTS idx_loans_user ON bank.loans(user_id);
+	CREATE INDEX IF NOT EXISTS idx_payments_loan ON bank.loan_payments(loan_id);
+	
+	-- Roles
+	INSERT INTO bank.roles (name)
+	VALUES
+	  ('ROLE_ADMIN'),
+	  ('ROLE_USER');
+	
+	-- Users (password_hash should be BCrypt from backend)
+	INSERT INTO bank.users (email, password_hash, first_name, last_name, phone)
+	VALUES
+	  ('admin@example.com', '{bcrypt_hash_here}', 'Admin', 'User', '555-0001'),
+	  ('client@example.com', '{bcrypt_hash_here}', 'Client', 'User', '555-0002');
+	
+	-- User roles
+	INSERT INTO bank.user_roles (user_id, role_id)
+	VALUES
+	  (1, 1), -- admin user -> ROLE_ADMIN
+	  (1, 2), -- admin user -> ROLE_USER
+	  (2, 2); -- client user -> ROLE_USER
+	
+	-- Loan products
+	INSERT INTO bank.loan_products (
+	  name, description, interest_rate, min_amount, max_amount, term_months, image_url, is_active
+	)
+	VALUES
+	  ('Starter Loan', 'Basic loan product', 5.50, 1000.00, 5000.00, 12, NULL, TRUE);
+	
+	-- Loan applications
+	INSERT INTO bank.loan_applications (
+	  user_id, loan_product_id, requested_amount, term_months, status, notes
+	)
+	VALUES
+	  (2, 1, 2500.00, 12, 'PENDING', 'First application');
+	
+	-- Loans (after approval)
+	INSERT INTO bank.loans (
+	  user_id, loan_product_id, application_id, principal, interest_rate, term_months, start_date, status
+	)
+	VALUES
+	  (2, 1, 1, 2500.00, 5.50, 12, CURRENT_DATE, 'ACTIVE');
+	
+	-- Payments
+	INSERT INTO bank.loan_payments (loan_id, amount, method, reference)
+	VALUES
+	  (1, 250.00, 'CARD', 'PAY-001');
+	
+	-- Uploads
+	INSERT INTO bank.uploads (
+	  user_id, filename, original_name, mime_type, file_size, storage_path
+	)
+	VALUES
+	  (2, 'upload_12345.pdf', 'proof_of_income.pdf', 'application/pdf', 123456, '/uploads/upload_12345.pdf');
+2026-01-22 23:27:03.880 EST [12316] ERROR:  permission denied for database postgres
+2026-01-22 23:27:03.880 EST [12316] STATEMENT:  -- Connect to bank_app in pgAdmin before running this.
+	
+	-- Create schema + set search path for bank_user
+	CREATE SCHEMA IF NOT EXISTS bank AUTHORIZATION bank_user;
+	ALTER ROLE bank_user SET search_path = bank, public;
+	
+	-- USERS
+	CREATE TABLE IF NOT EXISTS bank.users (
+	  id            BIGSERIAL PRIMARY KEY,
+	  email         VARCHAR(255) NOT NULL UNIQUE,
+	  password_hash VARCHAR(255) NOT NULL,
+	  first_name    VARCHAR(100) NOT NULL,
+	  last_name     VARCHAR(100) NOT NULL,
+	  phone         VARCHAR(30),
+	  created_at    TIMESTAMP NOT NULL DEFAULT NOW(),
+	  updated_at    TIMESTAMP NOT NULL DEFAULT NOW()
+	);
+	
+	-- ROLES
+	CREATE TABLE IF NOT EXISTS bank.roles (
+	  id    BIGSERIAL PRIMARY KEY,
+	  name  VARCHAR(50) NOT NULL UNIQUE
+	);
+	
+	-- USER_ROLES (many-to-many)
+	CREATE TABLE IF NOT EXISTS bank.user_roles (
+	  user_id BIGINT NOT NULL REFERENCES bank.users(id) ON DELETE CASCADE,
+	  role_id BIGINT NOT NULL REFERENCES bank.roles(id) ON DELETE CASCADE,
+	  PRIMARY KEY (user_id, role_id)
+	);
+	
+	-- LOAN PRODUCTS
+	CREATE TABLE IF NOT EXISTS bank.loan_products (
+	  id              BIGSERIAL PRIMARY KEY,
+	  name            VARCHAR(200) NOT NULL,
+	  description     TEXT,
+	  interest_rate   NUMERIC(5,2) NOT NULL CHECK (interest_rate >= 0),
+	  min_amount      NUMERIC(14,2) NOT NULL CHECK (min_amount >= 0),
+	  max_amount      NUMERIC(14,2) NOT NULL CHECK (max_amount >= min_amount),
+	  term_months     INTEGER NOT NULL CHECK (term_months > 0),
+	  image_url       TEXT,
+	  is_active       BOOLEAN NOT NULL DEFAULT TRUE,
+	  created_at      TIMESTAMP NOT NULL DEFAULT NOW(),
+	  updated_at      TIMESTAMP NOT NULL DEFAULT NOW()
+	);
+	
+	-- LOAN APPLICATIONS
+	CREATE TABLE IF NOT EXISTS bank.loan_applications (
+	  id                BIGSERIAL PRIMARY KEY,
+	  user_id           BIGINT NOT NULL REFERENCES bank.users(id) ON DELETE CASCADE,
+	  loan_product_id   BIGINT NOT NULL REFERENCES bank.loan_products(id) ON DELETE RESTRICT,
+	  requested_amount  NUMERIC(14,2) NOT NULL CHECK (requested_amount > 0),
+	  term_months       INTEGER NOT NULL CHECK (term_months > 0),
+	  status            VARCHAR(20) NOT NULL,
+	  notes             TEXT,
+	  created_at        TIMESTAMP NOT NULL DEFAULT NOW(),
+	  updated_at        TIMESTAMP NOT NULL DEFAULT NOW(),
+	  CHECK (status IN ('PENDING', 'APPROVED', 'REJECTED'))
+	);
+	
+	-- LOANS (created after approval)
+	CREATE TABLE IF NOT EXISTS bank.loans (
+	  id                BIGSERIAL PRIMARY KEY,
+	  user_id           BIGINT NOT NULL REFERENCES bank.users(id) ON DELETE CASCADE,
+	  loan_product_id   BIGINT NOT NULL REFERENCES bank.loan_products(id) ON DELETE RESTRICT,
+	  application_id    BIGINT UNIQUE REFERENCES bank.loan_applications(id) ON DELETE SET NULL,
+	  principal         NUMERIC(14,2) NOT NULL CHECK (principal > 0),
+	  interest_rate     NUMERIC(5,2) NOT NULL CHECK (interest_rate >= 0),
+	  term_months       INTEGER NOT NULL CHECK (term_months > 0),
+	  start_date        DATE NOT NULL,
+	  status            VARCHAR(20) NOT NULL,
+	  created_at        TIMESTAMP NOT NULL DEFAULT NOW(),
+	  updated_at        TIMESTAMP NOT NULL DEFAULT NOW(),
+	  CHECK (status IN ('ACTIVE', 'PAID', 'DEFAULTED'))
+	);
+	
+	-- LOAN PAYMENTS
+	CREATE TABLE IF NOT EXISTS bank.loan_payments (
+	  id          BIGSERIAL PRIMARY KEY,
+	  loan_id     BIGINT NOT NULL REFERENCES bank.loans(id) ON DELETE CASCADE,
+	  amount      NUMERIC(14,2) NOT NULL CHECK (amount > 0),
+	  paid_at     TIMESTAMP NOT NULL DEFAULT NOW(),
+	  method      VARCHAR(30) NOT NULL,
+	  reference   VARCHAR(100),
+	  created_at  TIMESTAMP NOT NULL DEFAULT NOW()
+	);
+	
+	-- UPLOADS (local files)
+	CREATE TABLE IF NOT EXISTS bank.uploads (
+	  id            BIGSERIAL PRIMARY KEY,
+	  user_id       BIGINT REFERENCES bank.users(id) ON DELETE SET NULL,
+	  filename      VARCHAR(255) NOT NULL,
+	  original_name VARCHAR(255),
+	  mime_type     VARCHAR(100),
+	  file_size     BIGINT CHECK (file_size >= 0),
+	  storage_path  TEXT NOT NULL,
+	  created_at    TIMESTAMP NOT NULL DEFAULT NOW()
+	);
+	
+	-- Helpful indexes
+	CREATE INDEX IF NOT EXISTS idx_loan_applications_user ON bank.loan_applications(user_id);
+	CREATE INDEX IF NOT EXISTS idx_loans_user ON bank.loans(user_id);
+	CREATE INDEX IF NOT EXISTS idx_payments_loan ON bank.loan_payments(loan_id);
+	
+	-- Roles
+	INSERT INTO bank.roles (name)
+	VALUES
+	  ('ROLE_ADMIN'),
+	  ('ROLE_USER');
+	
+	-- Users (password_hash should be BCrypt from backend)
+	INSERT INTO bank.users (email, password_hash, first_name, last_name, phone)
+	VALUES
+	  ('admin@example.com', '{bcrypt_hash_here}', 'Admin', 'User', '555-0001'),
+	  ('client@example.com', '{bcrypt_hash_here}', 'Client', 'User', '555-0002');
+	
+	-- User roles
+	INSERT INTO bank.user_roles (user_id, role_id)
+	VALUES
+	  (1, 1), -- admin user -> ROLE_ADMIN
+	  (1, 2), -- admin user -> ROLE_USER
+	  (2, 2); -- client user -> ROLE_USER
+	
+	-- Loan products
+	INSERT INTO bank.loan_products (
+	  name, description, interest_rate, min_amount, max_amount, term_months, image_url, is_active
+	)
+	VALUES
+	  ('Starter Loan', 'Basic loan product', 5.50, 1000.00, 5000.00, 12, NULL, TRUE);
+	
+	-- Loan applications
+	INSERT INTO bank.loan_applications (
+	  user_id, loan_product_id, requested_amount, term_months, status, notes
+	)
+	VALUES
+	  (2, 1, 2500.00, 12, 'PENDING', 'First application');
+	
+	-- Loans (after approval)
+	INSERT INTO bank.loans (
+	  user_id, loan_product_id, application_id, principal, interest_rate, term_months, start_date, status
+	)
+	VALUES
+	  (2, 1, 1, 2500.00, 5.50, 12, CURRENT_DATE, 'ACTIVE');
+	
+	-- Payments
+	INSERT INTO bank.loan_payments (loan_id, amount, method, reference)
+	VALUES
+	  (1, 250.00, 'CARD', 'PAY-001');
+	
+	-- Uploads
+	INSERT INTO bank.uploads (
+	  user_id, filename, original_name, mime_type, file_size, storage_path
+	)
+	VALUES
+	  (2, 'upload_12345.pdf', 'proof_of_income.pdf', 'application/pdf', 123456, '/uploads/upload_12345.pdf');
+2026-01-22 23:27:20.631 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 23:27:20.741 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=4007 kB; lsn=0/23F0738, redo lsn=0/23F06E0
+2026-01-22 23:32:20.743 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 23:32:36.835 EST [10787] LOG:  checkpoint complete: wrote 158 buffers (1.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=16.089 s, sync=0.003 s, total=16.093 s; sync files=93, longest=0.001 s, average=0.001 s; distance=670 kB, estimate=3673 kB; lsn=0/2498198, redo lsn=0/2498108
+2026-01-22 23:37:20.838 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 23:37:21.560 EST [10787] LOG:  checkpoint complete: wrote 7 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.719 s, sync=0.001 s, total=0.723 s; sync files=6, longest=0.001 s, average=0.001 s; distance=30 kB, estimate=3309 kB; lsn=0/249FC18, redo lsn=0/249FBC0
+2026-01-22 23:47:20.563 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 23:47:23.535 EST [10787] LOG:  checkpoint complete: wrote 29 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=2.963 s, sync=0.003 s, total=2.972 s; sync files=25, longest=0.001 s, average=0.001 s; distance=153 kB, estimate=2993 kB; lsn=0/24CD848, redo lsn=0/24C6190
+2026-01-22 23:52:20.537 EST [10787] LOG:  checkpoint starting: time
+2026-01-22 23:52:34.346 EST [10787] LOG:  checkpoint complete: wrote 135 buffers (0.8%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=13.797 s, sync=0.003 s, total=13.810 s; sync files=82, longest=0.001 s, average=0.001 s; distance=922 kB, estimate=2786 kB; lsn=0/25ACDA0, redo lsn=0/25ACD10
+2026-01-23 00:05:37.665 EST [30335] ERROR:  syntax error at or near "<" at character 15
+2026-01-23 00:05:37.665 EST [30335] STATEMENT:  SELECT * FROM <table_name> ORDER BY id DESC LIMIT 20;
+2026-01-23 00:06:05.649 EST [30335] ERROR:  syntax error at or near "<" at character 15
+2026-01-23 00:06:05.649 EST [30335] STATEMENT:  SELECT * FROM <users> ORDER BY id DESC LIMIT 20;
+2026-01-23 00:06:41.879 EST [30335] ERROR:  relation "users" does not exist at character 15
+2026-01-23 00:06:41.879 EST [30335] STATEMENT:  SELECT * FROM users ORDER BY id DESC LIMIT 20;
+2026-01-23 00:07:20.353 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 00:07:23.226 EST [10787] LOG:  checkpoint complete: wrote 28 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=2.864 s, sync=0.002 s, total=2.874 s; sync files=18, longest=0.001 s, average=0.001 s; distance=78 kB, estimate=2515 kB; lsn=0/25C0630, redo lsn=0/25C05D8
+2026-01-23 00:12:20.228 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 00:12:20.543 EST [10787] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.309 s, sync=0.001 s, total=0.316 s; sync files=3, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=2264 kB; lsn=0/25C1898, redo lsn=0/25C1840
+2026-01-23 01:07:20.562 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 01:07:20.977 EST [10787] LOG:  checkpoint complete: wrote 4 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.409 s, sync=0.001 s, total=0.416 s; sync files=4, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=2038 kB; lsn=0/25C1D68, redo lsn=0/25C1D10
+2026-01-23 01:12:20.979 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 01:12:21.088 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.109 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=1834 kB; lsn=0/25C20C8, redo lsn=0/25C2070
+2026-01-23 01:27:36.837 EST [30335] ERROR:  syntax error at or near "users" at character 1
+2026-01-23 01:27:36.837 EST [30335] STATEMENT:  users
+2026-01-23 01:47:20.101 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 01:47:20.411 EST [10787] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.304 s, sync=0.001 s, total=0.310 s; sync files=4, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=1651 kB; lsn=0/25C2578, redo lsn=0/25C2520
+2026-01-23 01:57:20.415 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 01:57:21.135 EST [10787] LOG:  checkpoint complete: wrote 7 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.714 s, sync=0.001 s, total=0.721 s; sync files=7, longest=0.001 s, average=0.001 s; distance=21 kB, estimate=1488 kB; lsn=0/25C7AA0, redo lsn=0/25C7A48
+2026-01-23 02:06:05.811 EST [30335] ERROR:  syntax error at or near "loan_products" at character 1
+2026-01-23 02:06:05.811 EST [30335] STATEMENT:  loan_products
+2026-01-23 02:20:25.753 EST [30335] ERROR:  column "rate_index" of relation "loan_products" does not exist at character 91
+2026-01-23 02:20:25.753 EST [30335] STATEMENT:  -- Loan products
+	INSERT INTO bank.loan_products (
+	  name, description, interest_rate_apr, rate_index, product_type,
+	  min_amount, max_amount, min_term_months, max_term_months,
+	  min_down_payment_pct, min_down_payment_amount, min_credit_score,
+	  image_url, is_active
+	)
+	VALUES
+	  ('Starter Loan', 'Basic loan product', 5.50, NULL, 'LOAN',
+	   1000.00, 5000.00, 60, 60,
+	   NULL, NULL, 620,
+	   NULL, TRUE);
+2026-01-23 02:21:05.335 EST [30335] ERROR:  column "interest_rate_apr" of relation "loan_products" already exists
+2026-01-23 02:21:05.335 EST [30335] STATEMENT:  ALTER TABLE bank.loan_products
+	  ADD COLUMN interest_rate_apr NUMERIC(5,2),
+	  ADD COLUMN rate_index NUMERIC(5,2),
+	  ADD COLUMN product_type VARCHAR(20) NOT NULL DEFAULT 'LOAN',
+	  ADD COLUMN min_term_months INTEGER,
+	  ADD COLUMN max_term_months INTEGER,
+	  ADD COLUMN min_down_payment_pct NUMERIC(5,2),
+	  ADD COLUMN min_down_payment_amount NUMERIC(14,2),
+	  ADD COLUMN min_credit_score INTEGER;
+	
+	-- Backfill old fields if you previously had interest_rate/term_months
+	UPDATE bank.loan_products
+	SET interest_rate_apr = interest_rate
+	WHERE interest_rate_apr IS NULL;
+	
+	UPDATE bank.loan_products
+	SET min_term_months = term_months,
+	    max_term_months = term_months
+	WHERE min_term_months IS NULL OR max_term_months IS NULL;
+2026-01-23 02:22:20.145 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 02:22:21.901 EST [10787] LOG:  checkpoint complete: wrote 17 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.752 s, sync=0.002 s, total=1.757 s; sync files=17, longest=0.001 s, average=0.001 s; distance=96 kB, estimate=1349 kB; lsn=0/25DFC10, redo lsn=0/25DFBB8
+2026-01-23 02:22:26.008 EST [30335] ERROR:  column "is_active" of relation "loan_products" does not exist at character 257
+2026-01-23 02:22:26.008 EST [30335] STATEMENT:  -- Loan products
+	INSERT INTO bank.loan_products (
+	  name, description, interest_rate_apr, rate_index, product_type,
+	  min_amount, max_amount, min_term_months, max_term_months,
+	  min_down_payment_pct, min_down_payment_amount, min_credit_score,
+	  image_url, is_active
+	)
+	VALUES
+	  ('Starter Loan', 'Basic loan product', 5.50, NULL, 'LOAN',
+	   1000.00, 5000.00, 60, 60,
+	   NULL, NULL, 620,
+	   NULL, TRUE);
+2026-01-23 02:23:55.556 EST [30335] ERROR:  relation "bank.app_settings" does not exist at character 13
+2026-01-23 02:23:55.556 EST [30335] STATEMENT:  INSERT INTO bank.app_settings (setting_key, setting_value)
+	VALUES ('prime_rate', 7.25);
+2026-01-23 02:27:20.903 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 02:27:25.617 EST [10787] LOG:  checkpoint complete: wrote 46 buffers (0.3%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=4.708 s, sync=0.002 s, total=4.714 s; sync files=37, longest=0.001 s, average=0.001 s; distance=207 kB, estimate=1234 kB; lsn=0/26139D8, redo lsn=0/2613948
+2026-01-23 17:10:22.466 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 17:10:22.578 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.105 s, sync=0.001 s, total=0.113 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=1111 kB; lsn=0/2613D78, redo lsn=0/2613D20
+2026-01-23 17:15:22.579 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 17:15:24.318 EST [10787] LOG:  checkpoint complete: wrote 17 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.734 s, sync=0.002 s, total=1.740 s; sync files=11, longest=0.001 s, average=0.001 s; distance=106 kB, estimate=1011 kB; lsn=0/262E588, redo lsn=0/262E530
+2026-01-23 17:20:22.320 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 17:20:23.146 EST [10787] LOG:  checkpoint complete: wrote 8 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.818 s, sync=0.001 s, total=0.827 s; sync files=6, longest=0.001 s, average=0.001 s; distance=67 kB, estimate=916 kB; lsn=0/263F208, redo lsn=0/263F1B0
+2026-01-23 17:25:22.148 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 17:25:23.370 EST [10787] LOG:  checkpoint complete: wrote 12 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.219 s, sync=0.001 s, total=1.223 s; sync files=10, longest=0.001 s, average=0.001 s; distance=69 kB, estimate=831 kB; lsn=0/2650940, redo lsn=0/26508E8
+2026-01-23 17:30:22.378 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 17:30:23.198 EST [10787] LOG:  checkpoint complete: wrote 8 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.816 s, sync=0.001 s, total=0.821 s; sync files=6, longest=0.001 s, average=0.001 s; distance=53 kB, estimate=754 kB; lsn=0/265DDC0, redo lsn=0/265DD68
+2026-01-23 17:35:22.200 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 17:35:22.720 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.512 s, sync=0.001 s, total=0.520 s; sync files=6, longest=0.001 s, average=0.001 s; distance=6 kB, estimate=679 kB; lsn=0/265F8F0, redo lsn=0/265F898
+2026-01-23 17:40:22.722 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 17:40:22.828 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.107 s; sync files=2, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=611 kB; lsn=0/2660A30, redo lsn=0/26609D8
+2026-01-23 17:45:22.830 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 17:45:23.348 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.510 s, sync=0.001 s, total=0.518 s; sync files=5, longest=0.001 s, average=0.001 s; distance=39 kB, estimate=554 kB; lsn=0/266AA18, redo lsn=0/266A9C0
+2026-01-23 17:50:22.350 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 17:50:23.586 EST [10787] LOG:  checkpoint complete: wrote 12 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.228 s, sync=0.001 s, total=1.237 s; sync files=10, longest=0.001 s, average=0.001 s; distance=70 kB, estimate=506 kB; lsn=0/267C478, redo lsn=0/267C420
+2026-01-23 17:55:22.587 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 17:55:23.111 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.515 s, sync=0.001 s, total=0.524 s; sync files=5, longest=0.001 s, average=0.001 s; distance=39 kB, estimate=459 kB; lsn=0/2686170, redo lsn=0/2686118
+2026-01-23 18:00:22.116 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 18:00:23.048 EST [10787] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.924 s, sync=0.001 s, total=0.932 s; sync files=9, longest=0.001 s, average=0.001 s; distance=45 kB, estimate=418 kB; lsn=0/2691630, redo lsn=0/26915A0
+2026-01-23 18:05:22.050 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 18:05:22.565 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.511 s, sync=0.001 s, total=0.515 s; sync files=5, longest=0.001 s, average=0.001 s; distance=40 kB, estimate=380 kB; lsn=0/269B8A0, redo lsn=0/269B848
+2026-01-23 18:10:22.567 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 18:10:23.489 EST [10787] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.920 s, sync=0.001 s, total=0.923 s; sync files=9, longest=0.001 s, average=0.001 s; distance=47 kB, estimate=347 kB; lsn=0/26A74B0, redo lsn=0/26A7458
+2026-01-23 18:15:22.491 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 18:15:23.006 EST [10787] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.508 s, sync=0.001 s, total=0.515 s; sync files=5, longest=0.001 s, average=0.001 s; distance=39 kB, estimate=316 kB; lsn=0/26B11A0, redo lsn=0/26B1148
+2026-01-23 18:20:22.010 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 18:20:28.386 EST [10787] LOG:  checkpoint complete: wrote 62 buffers (0.4%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=6.370 s, sync=0.004 s, total=6.376 s; sync files=60, longest=0.001 s, average=0.001 s; distance=260 kB, estimate=310 kB; lsn=0/26F2488, redo lsn=0/26F2430
+2026-01-23 18:25:22.388 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 18:25:22.494 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.106 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=279 kB; lsn=0/26F29C8, redo lsn=0/26F2970
+2026-01-23 18:40:22.504 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 18:40:22.615 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.104 s, sync=0.001 s, total=0.112 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=251 kB; lsn=0/26F2EA8, redo lsn=0/26F2E50
+2026-01-23 19:35:24.169 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 19:35:24.380 EST [10787] LOG:  checkpoint complete: wrote 2 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.207 s, sync=0.001 s, total=0.217 s; sync files=2, longest=0.001 s, average=0.001 s; distance=13 kB, estimate=228 kB; lsn=0/26F65D8, redo lsn=0/26F6580
+2026-01-23 19:38:57.695 EST [90854] ERROR:  column "username" of relation "users" does not exist at character 167
+2026-01-23 19:38:57.695 EST [90854] STATEMENT:  -- Roles
+	INSERT INTO roles (name)
+	VALUES ('ROLE_USER'), ('ROLE_ADMIN')
+	ON CONFLICT (name) DO NOTHING;
+	
+	-- Admin user (replace email + bcrypt hash)
+	INSERT INTO users (username, email, password_hash, created_at)
+	SELECT 'admin', 'admin@alkicorp.local', '$2a$10$REPLACE_WITH_BCRYPT_HASH', NOW()
+	WHERE NOT EXISTS (
+	  SELECT 1 FROM users
+	  WHERE username = 'admin' OR email = 'admin@alkicorp.local'
+	);
+	
+	-- Admin -> ROLE_ADMIN
+	WITH user_row AS (
+	  SELECT id FROM users WHERE username = 'admin'
+	),
+	role_row AS (
+	  SELECT id FROM roles WHERE name = 'ROLE_ADMIN'
+	)
+	INSERT INTO user_roles (user_id, role_id)
+	SELECT user_row.id, role_row.id
+	FROM user_row, role_row
+	ON CONFLICT DO NOTHING;
+	
+	-- Optional: Admin -> ROLE_USER
+	WITH user_row AS (
+	  SELECT id FROM users WHERE username = 'admin'
+	),
+	role_row AS (
+	  SELECT id FROM roles WHERE name = 'ROLE_USER'
+	)
+	INSERT INTO user_roles (user_id, role_id)
+	SELECT user_row.id, role_row.id
+	FROM user_row, role_row
+	ON CONFLICT DO NOTHING;
+2026-01-23 19:40:24.383 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 19:40:25.114 EST [10787] LOG:  checkpoint complete: wrote 7 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.723 s, sync=0.002 s, total=0.732 s; sync files=8, longest=0.001 s, average=0.001 s; distance=15 kB, estimate=206 kB; lsn=0/26FA568, redo lsn=0/26FA510
+2026-01-23 19:42:33.066 EST [90854] ERROR:  column "name" of relation "users" does not exist at character 20
+2026-01-23 19:42:33.066 EST [90854] STATEMENT:  INSERT INTO users (name)
+	SELECT 'admin'
+	WHERE NOT EXISTS (
+	  SELECT 1 FROM users WHERE name = 'admin'
+	);
+2026-01-23 19:45:24.117 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 19:45:25.256 EST [10787] LOG:  checkpoint complete: wrote 11 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.132 s, sync=0.002 s, total=1.139 s; sync files=7, longest=0.001 s, average=0.001 s; distance=39 kB, estimate=190 kB; lsn=0/27044D0, redo lsn=0/2704478
+2026-01-23 19:50:24.258 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 19:50:24.366 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.111 s; sync files=1, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=171 kB; lsn=0/2704768, redo lsn=0/2704710
+2026-01-23 20:00:24.369 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 20:00:24.478 EST [10787] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.110 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=154 kB; lsn=0/2704C68, redo lsn=0/2704C10
+2026-01-23 20:05:24.480 EST [10787] LOG:  checkpoint starting: time
+2026-01-23 20:05:27.138 EST [10787] LOG:  checkpoint complete: wrote 26 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=2.652 s, sync=0.002 s, total=2.659 s; sync files=21, longest=0.001 s, average=0.001 s; distance=33 kB, estimate=142 kB; lsn=0/270E368, redo lsn=0/270D2F0

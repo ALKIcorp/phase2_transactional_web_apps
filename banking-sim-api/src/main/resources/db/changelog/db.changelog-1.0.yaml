@@ -1,0 +1,941 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1-create-bank-state
+      author: alkicorp
+      validCheckSum: 9:68ef7037a5e1c1ea0c95ce8a671e7989
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        not:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'bank_state'
+      changes:
+        - createTable:
+            tableName: bank_state
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: slot_id
+                  type: INT
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: liquid_cash
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: invested_sp500
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: sp500_price
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: game_day
+                  type: "DOUBLE PRECISION"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: next_dividend_day
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: next_growth_day
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_update_timestamp
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 2-create-client
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        not:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'client'
+      changes:
+        - createTable:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: bank_state_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: slot_id
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(80)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: checking_balance
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: daily_withdrawn
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: card_number
+                  type: VARCHAR(32)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: card_expiry
+                  type: VARCHAR(8)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: card_cvv
+                  type: VARCHAR(4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: client
+            baseColumnNames: bank_state_id
+            constraintName: fk_client_bank_state
+            referencedTableName: bank_state
+            referencedColumnNames: id
+        - createIndex:
+            tableName: client
+            indexName: idx_client_slot
+            columns:
+              - column:
+                  name: slot_id
+  - changeSet:
+      id: 3-create-transaction
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        not:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'client_transaction'
+      changes:
+        - createTable:
+            tableName: client_transaction
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: client_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: game_day
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: client_transaction
+            baseColumnNames: client_id
+            constraintName: fk_tx_client
+            referencedTableName: client
+            referencedColumnNames: id
+        - createIndex:
+            tableName: client_transaction
+            indexName: idx_tx_client
+            columns:
+              - column:
+                  name: client_id
+  - changeSet:
+      id: 4-create-investment-event
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        not:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'investment_event'
+      changes:
+        - createTable:
+            tableName: investment_event
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: slot_id
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: asset
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: game_day
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+        - createIndex:
+            tableName: investment_event
+            indexName: idx_investment_slot
+            columns:
+              - column:
+                  name: slot_id
+  - changeSet:
+      id: 6-fix-bank-state-id-auto-increment
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        and:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'bank_state'
+          - columnExists:
+              tableName: bank_state
+              columnName: id
+              schemaName: public
+          - sqlCheck:
+              expectedResult: 0
+              sql: >
+                SELECT COUNT(*) FROM information_schema.columns
+                WHERE table_schema = 'public'
+                  AND table_name = 'bank_state'
+                  AND column_name = 'id'
+                  AND is_identity = 'YES'
+              dbms: postgresql
+      changes:
+        - addAutoIncrement:
+            tableName: bank_state
+            columnName: id
+            columnDataType: BIGINT
+        - sql:
+            sql: SELECT setval('bank_state_id_seq', 4, false)
+            dbms: postgresql
+  - changeSet:
+      id: 6b-set-bank-state-sequence-value
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        and:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'bank_state'
+          - columnExists:
+              tableName: bank_state
+              columnName: id
+              schemaName: public
+          - sqlCheck:
+              expectedResult: 1
+              sql: >
+                SELECT COUNT(*) FROM information_schema.columns
+                WHERE table_schema = 'public'
+                  AND table_name = 'bank_state'
+                  AND column_name = 'id'
+                  AND is_identity = 'YES'
+              dbms: postgresql
+      changes:
+        - sql:
+            sql: ALTER TABLE bank_state ALTER COLUMN id RESTART WITH 4
+            dbms: postgresql
+  - changeSet:
+      id: 7-fix-client-id-auto-increment
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        and:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'client'
+          - columnExists:
+              tableName: client
+              columnName: id
+              schemaName: public
+          - sqlCheck:
+              expectedResult: 0
+              sql: >
+                SELECT COUNT(*) FROM information_schema.columns
+                WHERE table_schema = 'public'
+                  AND table_name = 'client'
+                  AND column_name = 'id'
+                  AND is_identity = 'YES'
+              dbms: postgresql
+      changes:
+        - addAutoIncrement:
+            tableName: client
+            columnName: id
+            columnDataType: BIGINT
+  - changeSet:
+      id: 8-fix-client-transaction-id-auto-increment
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        and:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'client_transaction'
+          - columnExists:
+              tableName: client_transaction
+              columnName: id
+              schemaName: public
+          - sqlCheck:
+              expectedResult: 0
+              sql: >
+                SELECT COUNT(*) FROM information_schema.columns
+                WHERE table_schema = 'public'
+                  AND table_name = 'client_transaction'
+                  AND column_name = 'id'
+                  AND is_identity = 'YES'
+              dbms: postgresql
+      changes:
+        - addAutoIncrement:
+            tableName: client_transaction
+            columnName: id
+            columnDataType: BIGINT
+  - changeSet:
+      id: 9-fix-investment-event-id-auto-increment
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        and:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'investment_event'
+          - columnExists:
+              tableName: investment_event
+              columnName: id
+              schemaName: public
+          - sqlCheck:
+              expectedResult: 0
+              sql: >
+                SELECT COUNT(*) FROM information_schema.columns
+                WHERE table_name = 'investment_event'
+                  AND column_name = 'id'
+                  AND is_identity = 'YES'
+              dbms: postgresql
+      changes:
+        - addAutoIncrement:
+            tableName: investment_event
+            columnName: id
+            columnDataType: BIGINT
+  - changeSet:
+      id: 10-create-roles
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        not:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'roles'
+      changes:
+        - createTable:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(60)
+                  constraints:
+                    nullable: false
+                    unique: true
+  - changeSet:
+      id: 11-create-users
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        not:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'users'
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: email
+                  type: VARCHAR(120)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password_hash
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 12-create-user-roles
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        not:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'user_roles'
+      changes:
+        - createTable:
+            tableName: user_roles
+            columns:
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - addPrimaryKey:
+            tableName: user_roles
+            columnNames: user_id, role_id
+            constraintName: pk_user_roles
+        - addForeignKeyConstraint:
+            baseTableName: user_roles
+            baseColumnNames: user_id
+            constraintName: fk_user_roles_user
+            referencedTableName: users
+            referencedColumnNames: id
+        - addForeignKeyConstraint:
+            baseTableName: user_roles
+            baseColumnNames: role_id
+            constraintName: fk_user_roles_role
+            referencedTableName: roles
+            referencedColumnNames: id
+  - changeSet:
+      id: 13-add-user-ownership-to-bank-state
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        and:
+          - tableExists:
+              tableName: bank_state
+          - tableExists:
+              tableName: users
+      changes:
+        - addColumn:
+            tableName: bank_state
+            columns:
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+        - addForeignKeyConstraint:
+            baseTableName: bank_state
+            baseColumnNames: user_id
+            constraintName: fk_bank_state_user
+            referencedTableName: users
+            referencedColumnNames: id
+        - dropUniqueConstraint:
+            tableName: bank_state
+            constraintName: bank_state_slot_id_key
+        - addUniqueConstraint:
+            tableName: bank_state
+            columnNames: user_id, slot_id
+            constraintName: uk_bank_state_user_slot
+        - createIndex:
+            tableName: bank_state
+            indexName: idx_bank_state_user_slot
+            columns:
+              - column:
+                  name: user_id
+              - column:
+                  name: slot_id
+  - changeSet:
+      id: 14-add-user-ownership-to-investment-event
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        and:
+          - tableExists:
+              tableName: investment_event
+          - tableExists:
+              tableName: users
+      changes:
+        - addColumn:
+            tableName: investment_event
+            columns:
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+        - addForeignKeyConstraint:
+            baseTableName: investment_event
+            baseColumnNames: user_id
+            constraintName: fk_investment_event_user
+            referencedTableName: users
+            referencedColumnNames: id
+        - createIndex:
+            tableName: investment_event
+            indexName: idx_investment_user_slot
+            columns:
+              - column:
+                  name: user_id
+              - column:
+                  name: slot_id
+  - changeSet:
+      id: 15-add-admin-status-to-users
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        and:
+          - tableExists:
+              tableName: users
+          - not:
+              - columnExists:
+                  tableName: users
+                  columnName: admin_status
+      changes:
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: admin_status
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 16-create-products
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        not:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'products'
+      changes:
+        - createTable:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: slot_id
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_by_user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: owner_client_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: name
+                  type: VARCHAR(120)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: rooms
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: sqft2
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: image_url
+                  type: VARCHAR(400)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: status
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: products
+            baseColumnNames: created_by_user_id
+            constraintName: fk_products_created_by_user
+            referencedTableName: users
+            referencedColumnNames: id
+        - addForeignKeyConstraint:
+            baseTableName: products
+            baseColumnNames: owner_client_id
+            constraintName: fk_products_owner_client
+            referencedTableName: client
+            referencedColumnNames: id
+        - createIndex:
+            tableName: products
+            indexName: idx_products_slot_status
+            columns:
+              - column:
+                  name: slot_id
+              - column:
+                  name: status
+        - createIndex:
+            tableName: products
+            indexName: idx_products_owner_client
+            columns:
+              - column:
+                  name: owner_client_id
+  - changeSet:
+      id: 17-create-loans
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        not:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'loans'
+      changes:
+        - createTable:
+            tableName: loans
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: slot_id
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: client_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: term_years
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: interest_rate
+                  type: DECIMAL(6,4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: loans
+            baseColumnNames: user_id
+            constraintName: fk_loans_user
+            referencedTableName: users
+            referencedColumnNames: id
+        - addForeignKeyConstraint:
+            baseTableName: loans
+            baseColumnNames: client_id
+            constraintName: fk_loans_client
+            referencedTableName: client
+            referencedColumnNames: id
+        - createIndex:
+            tableName: loans
+            indexName: idx_loans_slot_client
+            columns:
+              - column:
+                  name: slot_id
+              - column:
+                  name: client_id
+  - changeSet:
+      id: 18-create-mortgages
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        not:
+          - sqlCheck:
+              expectedResult: 1
+              sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'mortgages'
+      changes:
+        - createTable:
+            tableName: mortgages
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: slot_id
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: client_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: product_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: property_price
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: down_payment
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: loan_amount
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: term_years
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: interest_rate
+                  type: DECIMAL(6,4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: mortgages
+            baseColumnNames: user_id
+            constraintName: fk_mortgages_user
+            referencedTableName: users
+            referencedColumnNames: id
+        - addForeignKeyConstraint:
+            baseTableName: mortgages
+            baseColumnNames: client_id
+            constraintName: fk_mortgages_client
+            referencedTableName: client
+            referencedColumnNames: id
+        - addForeignKeyConstraint:
+            baseTableName: mortgages
+            baseColumnNames: product_id
+            constraintName: fk_mortgages_product
+            referencedTableName: products
+            referencedColumnNames: id
+        - createIndex:
+            tableName: mortgages
+            indexName: idx_mortgages_slot_client
+            columns:
+              - column:
+                  name: slot_id
+              - column:
+                  name: client_id
+  - changeSet:
+      id: 19-add-mortgage-rate-to-bank-state
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        and:
+          - tableExists:
+              tableName: bank_state
+          - not:
+              - columnExists:
+                  tableName: bank_state
+                  columnName: mortgage_rate
+      changes:
+        - addColumn:
+            tableName: bank_state
+            columns:
+              - column:
+                  name: mortgage_rate
+                  type: DECIMAL(6,4)
+                  defaultValueNumeric: 0
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 20-expand-client-transaction-type
+      author: alkicorp
+      preConditions:
+        onFail: MARK_RAN
+        onError: HALT
+        and:
+          - tableExists:
+              tableName: client_transaction
+          - columnExists:
+              tableName: client_transaction
+              columnName: type
+      changes:
+        - modifyDataType:
+            tableName: client_transaction
+            columnName: type
+            newDataType: VARCHAR(40)
