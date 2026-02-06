@@ -7,17 +7,20 @@ import com.alkicorp.bankingsim.service.ProductService;
 import com.alkicorp.bankingsim.web.dto.ClientResponse;
 import com.alkicorp.bankingsim.web.dto.CreateClientRequest;
 import com.alkicorp.bankingsim.web.dto.MoneyRequest;
+import com.alkicorp.bankingsim.web.dto.MonthlyCashflowResponse;
 import com.alkicorp.bankingsim.web.dto.ProductResponse;
 import com.alkicorp.bankingsim.web.dto.TransactionResponse;
 import jakarta.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -29,10 +32,11 @@ public class ClientController {
     private final ProductService productService;
 
     @GetMapping
+    @Transactional(readOnly = true)
     public List<ClientResponse> listClients(@PathVariable int slotId) {
         return clientService.getClients(slotId).stream()
-            .map(this::toResponse)
-            .collect(Collectors.toList());
+                .map(this::toResponse)
+                .collect(Collectors.toList());
     }
 
     @PostMapping
@@ -42,74 +46,116 @@ public class ClientController {
     }
 
     @GetMapping("/{clientId}")
+    @Transactional(readOnly = true)
     public ClientResponse getClient(@PathVariable int slotId, @PathVariable Long clientId) {
         return toResponse(clientService.getClient(slotId, clientId));
     }
 
     @GetMapping("/{clientId}/transactions")
+    @Transactional(readOnly = true)
     public List<TransactionResponse> getTransactions(@PathVariable int slotId, @PathVariable Long clientId) {
         List<Transaction> txs = clientService.getTransactions(clientId, slotId);
         return txs.stream().map(this::toResponse).collect(Collectors.toList());
     }
 
+    @GetMapping("/{clientId}/monthly-cashflow")
+    @Transactional(readOnly = true)
+    public MonthlyCashflowResponse getMonthlyCashflow(@PathVariable int slotId,
+            @PathVariable Long clientId,
+            @RequestParam int year,
+            @RequestParam int month) {
+        return clientService.getMonthlyCashflow(slotId, clientId, year, month);
+    }
+
     @GetMapping("/{clientId}/properties")
     public List<ProductResponse> getOwnedProperties(@PathVariable int slotId, @PathVariable Long clientId) {
         return productService.getOwnedProducts(slotId, clientId).stream()
-            .map(product -> ProductResponse.builder()
-                .id(product.getId())
-                .slotId(product.getSlotId())
-                .name(product.getName())
-                .price(product.getPrice())
-                .description(product.getDescription())
-                .rooms(product.getRooms())
-                .sqft2(product.getSqft2())
-                .imageUrl(product.getImageUrl())
-                .status(product.getStatus().name())
-                .ownerClientId(product.getOwnerClient() == null ? null : product.getOwnerClient().getId())
-                .createdAt(product.getCreatedAt())
-                .build())
-            .collect(Collectors.toList());
+                .map(product -> ProductResponse.builder()
+                        .id(product.getId())
+                        .slotId(product.getSlotId())
+                        .name(product.getName())
+                        .price(product.getPrice())
+                        .description(product.getDescription())
+                        .rooms(product.getRooms())
+                        .sqft2(product.getSqft2())
+                        .imageUrl(product.getImageUrl())
+                        .status(product.getStatus().name())
+                        .ownerClientId(product.getOwnerClient() == null ? null : product.getOwnerClient().getId())
+                        .createdAt(product.getCreatedAt())
+                        .build())
+                .collect(Collectors.toList());
     }
 
     @PostMapping("/{clientId}/deposit")
-    public TransactionResponse deposit(@PathVariable int slotId, @PathVariable Long clientId, @Valid @RequestBody MoneyRequest request) {
+    public TransactionResponse deposit(@PathVariable int slotId, @PathVariable Long clientId,
+            @Valid @RequestBody MoneyRequest request) {
         Transaction tx = clientService.deposit(slotId, clientId, request.getAmount());
         return toResponse(tx);
     }
 
     @PostMapping("/{clientId}/withdraw")
-    public TransactionResponse withdraw(@PathVariable int slotId, @PathVariable Long clientId, @Valid @RequestBody MoneyRequest request) {
+    public TransactionResponse withdraw(@PathVariable int slotId, @PathVariable Long clientId,
+            @Valid @RequestBody MoneyRequest request) {
         Transaction tx = clientService.withdraw(slotId, clientId, request.getAmount());
         return toResponse(tx);
     }
 
     @PostMapping("/{clientId}/mortgage-funding")
     public TransactionResponse fundMortgageDownPayment(@PathVariable int slotId,
-                                                       @PathVariable Long clientId,
-                                                       @Valid @RequestBody MoneyRequest request) {
+            @PathVariable Long clientId,
+            @Valid @RequestBody MoneyRequest request) {
         Transaction tx = clientService.fundMortgageDownPayment(slotId, clientId, request.getAmount());
         return toResponse(tx);
     }
 
+    @PostMapping("/{clientId}/properties/{productId}/sell")
+    public TransactionResponse sellProperty(@PathVariable int slotId,
+            @PathVariable Long clientId,
+            @PathVariable Long productId) {
+        Transaction tx = productService.sellOwnedProperty(slotId, clientId, productId);
+        return toResponse(tx);
+    }
+
     private ClientResponse toResponse(Client client) {
+        var primaryJobOpt = clientService.getPrimaryJob(client);
         return ClientResponse.builder()
-            .id(client.getId())
-            .name(client.getName())
-            .checkingBalance(client.getCheckingBalance())
-            .dailyWithdrawn(client.getDailyWithdrawn())
-            .cardNumber(client.getCardNumber())
-            .cardExpiry(client.getCardExpiry())
-            .cardCvv(client.getCardCvv())
-            .build();
+                .id(client.getId())
+                .name(client.getName())
+                .checkingBalance(client.getCheckingBalance())
+                .savingsBalance(client.getSavingsBalance())
+                .dailyWithdrawn(client.getDailyWithdrawn())
+                .monthlyIncome(client.getMonthlyIncomeCache())
+                .monthlyMandatory(client.getMonthlyMandatoryCache())
+                .monthlyDiscretionary(client.getMonthlyDiscretionaryTarget())
+                .cardNumber(client.getCardNumber())
+                .cardExpiry(client.getCardExpiry())
+                .cardCvv(client.getCardCvv())
+                .employmentStatus(client.getEmploymentStatus())
+                .primaryJobId(primaryJobOpt.map(cj -> cj.getJob() != null ? cj.getJob().getId() : null).orElse(null))
+                .primaryJobTitle(
+                        primaryJobOpt.map(cj -> cj.getJob() != null ? cj.getJob().getTitle() : null).orElse(null))
+                .primaryJobEmployer(
+                        primaryJobOpt.map(cj -> cj.getJob() != null ? cj.getJob().getEmployer() : null).orElse(null))
+                .primaryJobAnnualSalary(primaryJobOpt
+                        .map(cj -> cj.getJob() != null ? cj.getJob().getAnnualSalary() : null).orElse(null))
+                .primaryJobPayCycleDays(primaryJobOpt
+                        .map(cj -> cj.getJob() != null ? cj.getJob().getPayCycleDays() : null).orElse(null))
+                .primaryJobStartDate(
+                        primaryJobOpt.map(com.alkicorp.bankingsim.model.ClientJob::getStartDate).orElse(null))
+                .bankrupt(client.getBankrupt())
+                .bankruptUntil(client.getBankruptUntil())
+                .purchasingBlockReason(client.getPurchasingBlockReason())
+                .gameDay(client.getBankState() != null ? client.getBankState().getGameDay() : null)
+                .build();
     }
 
     private TransactionResponse toResponse(Transaction tx) {
         return TransactionResponse.builder()
-            .id(tx.getId())
-            .type(tx.getType())
-            .amount(tx.getAmount())
-            .gameDay(tx.getGameDay())
-            .createdAt(tx.getCreatedAt())
-            .build();
+                .id(tx.getId())
+                .type(tx.getType())
+                .amount(tx.getAmount())
+                .gameDay(tx.getGameDay())
+                .createdAt(tx.getCreatedAt())
+                .build();
     }
 }

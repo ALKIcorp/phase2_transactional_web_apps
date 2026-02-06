@@ -2,11 +2,12 @@ package com.alkicorp.bankingsim.service;
 
 import com.alkicorp.bankingsim.auth.model.User;
 import com.alkicorp.bankingsim.auth.service.CurrentUserService;
+import com.alkicorp.bankingsim.model.BankState;
 import com.alkicorp.bankingsim.model.Client;
 import com.alkicorp.bankingsim.model.Loan;
 import com.alkicorp.bankingsim.model.enums.LoanStatus;
 import com.alkicorp.bankingsim.model.enums.TransactionType;
-import com.alkicorp.bankingsim.repository.ClientRepository;
+import com.alkicorp.bankingsim.service.SimulationService;
 import com.alkicorp.bankingsim.repository.LoanRepository;
 import jakarta.validation.ValidationException;
 import java.math.BigDecimal;
@@ -24,9 +25,9 @@ import org.springframework.web.server.ResponseStatusException;
 public class LoanService {
 
     private final LoanRepository loanRepository;
-    private final ClientRepository clientRepository;
     private final ClientService clientService;
     private final CurrentUserService currentUserService;
+    private final SimulationService simulationService;
     private final Clock clock = Clock.systemUTC();
 
     @Transactional
@@ -34,8 +35,7 @@ public class LoanService {
         validateAmount(amount);
         validateTerm(termYears);
         User user = currentUserService.getCurrentUser();
-        Client client = clientRepository.findByIdAndSlotIdAndBankStateUserId(clientId, slotId, user.getId())
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Client not found"));
+        Client client = clientService.getClient(slotId, clientId);
         Loan loan = new Loan();
         loan.setSlotId(slotId);
         loan.setUser(user);
@@ -47,6 +47,14 @@ public class LoanService {
         Instant now = Instant.now(clock);
         loan.setCreatedAt(now);
         loan.setUpdatedAt(now);
+        loan.setMissedPayments(0);
+        loan.setLastPaymentStatus(null);
+        loan.setRepossessionFlag(false);
+        loan.setWrittenOff(false);
+        loan.setNextPaymentDay(null);
+        loan.setMonthlyPayment(null);
+        loan.setAprSnapshot(null);
+        loan.setDtiAtOrigination(null);
         return loanRepository.save(loan);
     }
 
@@ -63,15 +71,24 @@ public class LoanService {
     public Loan updateStatus(int slotId, Long loanId, LoanStatus status) {
         User user = currentUserService.getCurrentUser();
         Loan loan = user.isAdminStatus()
-            ? loanRepository.findByIdAndSlotId(loanId, slotId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Loan not found"))
-            : loanRepository.findByIdAndSlotIdAndUserId(loanId, slotId, user.getId())
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Loan not found"));
+                ? loanRepository.findByIdAndSlotId(loanId, slotId)
+                        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Loan not found"))
+                : loanRepository.findByIdAndSlotIdAndUserId(loanId, slotId, user.getId())
+                        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Loan not found"));
         if (loan.getStatus() != LoanStatus.PENDING) {
             throw new ValidationException("Loan already processed.");
         }
         if (status == LoanStatus.APPROVED) {
-            clientService.creditAccount(slotId, loan.getClient().getId(), loan.getAmount(), TransactionType.LOAN_DISBURSEMENT, false);
+            clientService.creditAccount(slotId, loan.getClient().getId(), loan.getAmount(),
+                    TransactionType.LOAN_DISBURSEMENT, false);
+            // set payment schedule defaults: monthly over term years, simple amortization
+            int months = loan.getTermYears() * 12;
+            BigDecimal monthlyPayment = months > 0
+                    ? loan.getAmount().divide(BigDecimal.valueOf(months), 2, java.math.RoundingMode.HALF_UP)
+                    : loan.getAmount();
+            loan.setMonthlyPayment(monthlyPayment);
+            loan.setNextPaymentDay((int) Math.floor(simulationService.getAndAdvanceState(user, slotId)
+                    .map(BankState::getGameDay).orElse(0d)) + SimulationConstants.REPAYMENT_PERIOD_DAYS);
         }
         loan.setStatus(status);
         loan.setUpdatedAt(Instant.now(clock));
@@ -85,8 +102,8 @@ public class LoanService {
     }
 
     private void validateTerm(Integer termYears) {
-        if (termYears == null || termYears < 5 || termYears > 30) {
-            throw new ValidationException("Term must be between 5 and 30 years.");
+        if (termYears == null || termYears < 3 || termYears > 15) {
+            throw new ValidationException("Term must be between 3 and 15 years.");
         }
     }
 }

@@ -4,16 +4,20 @@ import com.alkicorp.bankingsim.auth.model.User;
 import com.alkicorp.bankingsim.auth.service.CurrentUserService;
 import com.alkicorp.bankingsim.model.BankState;
 import com.alkicorp.bankingsim.model.Client;
+import com.alkicorp.bankingsim.model.ClientJob;
 import com.alkicorp.bankingsim.model.Transaction;
 import com.alkicorp.bankingsim.model.enums.TransactionType;
 import com.alkicorp.bankingsim.repository.ClientRepository;
+import com.alkicorp.bankingsim.repository.ClientJobRepository;
 import com.alkicorp.bankingsim.repository.TransactionRepository;
+import com.alkicorp.bankingsim.web.dto.MonthlyCashflowResponse;
 import jakarta.validation.ValidationException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.security.SecureRandom;
 import java.time.Clock;
 import java.time.Instant;
+import java.util.EnumSet;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -25,7 +29,16 @@ import org.springframework.web.server.ResponseStatusException;
 @RequiredArgsConstructor
 public class ClientService {
 
+    private static final EnumSet<TransactionType> DEPOSIT_TYPES = EnumSet.of(
+            TransactionType.DEPOSIT,
+            TransactionType.PAYROLL_DEPOSIT,
+            TransactionType.SAVINGS_DEPOSIT,
+            TransactionType.LOAN_DISBURSEMENT,
+            TransactionType.MORTGAGE_DOWN_PAYMENT_FUNDING,
+            TransactionType.PROPERTY_SALE);
+
     private final ClientRepository clientRepository;
+    private final ClientJobRepository clientJobRepository;
     private final TransactionRepository transactionRepository;
     private final SimulationService simulationService;
     private final CurrentUserService currentUserService;
@@ -42,14 +55,24 @@ public class ClientService {
         }
         User user = currentUserService.getCurrentUser();
         BankState state = simulationService.getAndAdvanceState(user, slotId)
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, 
-                "Bank state not found for slot " + slotId + ". Use POST /api/slots/" + slotId + "/start to initialize the slot."));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "Bank state not found for slot " + slotId + ". Use POST /api/slots/" + slotId
+                                + "/start to initialize the slot."));
         Client client = new Client();
         client.setBankState(state);
         client.setSlotId(slotId);
         client.setName(name.trim());
         client.setCheckingBalance(BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP));
         client.setDailyWithdrawn(BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP));
+        client.setSavingsBalance(BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP));
+        client.setMonthlyIncomeCache(BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP));
+        client.setMonthlyMandatoryCache(BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP));
+        client.setMonthlyDiscretionaryTarget(BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP));
+        client.setEmploymentStatus("ACTIVE");
+        client.setBankrupt(false);
+        client.setBankruptUntil(null);
+        client.setMissedPaymentStreak(0);
+        client.setPurchasingBlockReason(null);
         DebitCard card = generateDebitCard();
         client.setCardNumber(card.number());
         client.setCardExpiry(card.expiry());
@@ -58,17 +81,34 @@ public class ClientService {
         return clientRepository.save(client);
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public List<Client> getClients(int slotId) {
         User user = currentUserService.getCurrentUser();
+        // Advance the simulation so payroll/spending post before returning balances.
+        simulationService.getAndAdvanceState(user, slotId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "Bank state not found for slot " + slotId + ". Use POST /api/slots/" + slotId
+                                + "/start to initialize the slot."));
         return clientRepository.findBySlotIdAndBankStateUserId(slotId, user.getId());
     }
 
     @Transactional(readOnly = true)
+    public java.util.Optional<ClientJob> getPrimaryJob(Client client) {
+        if (client == null || client.getId() == null) {
+            return java.util.Optional.empty();
+        }
+        return clientJobRepository.findFirstByClientIdAndPrimaryTrueOrderByStartDateDesc(client.getId());
+    }
+
+    @Transactional
     public Client getClient(int slotId, Long clientId) {
         User user = currentUserService.getCurrentUser();
-        return clientRepository.findByIdAndSlotIdAndBankStateUserId(clientId, slotId, user.getId())
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Client not found"));
+        simulationService.getAndAdvanceState(user, slotId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "Bank state not found for slot " + slotId + ". Use POST /api/slots/" + slotId
+                                + "/start to initialize the slot."));
+        var clientOpt = clientRepository.findByIdAndSlotIdAndBankStateUserId(clientId, slotId, user.getId());
+        return clientOpt.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Client not found"));
     }
 
     @Transactional
@@ -81,15 +121,17 @@ public class ClientService {
         validateAmount(amount, false);
         User user = currentUserService.getCurrentUser();
         BankState state = simulationService.getAndAdvanceState(user, slotId)
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, 
-                "Bank state not found for slot " + slotId + ". Use POST /api/slots/" + slotId + "/start to initialize the slot."));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "Bank state not found for slot " + slotId + ". Use POST /api/slots/" + slotId
+                                + "/start to initialize the slot."));
         Client client = getClient(slotId, clientId);
         if (amount.compareTo(client.getCheckingBalance()) > 0) {
             throw new ValidationException("Insufficient funds.");
         }
         BigDecimal remainingLimit = SimulationConstants.DAILY_WITHDRAWAL_LIMIT.subtract(client.getDailyWithdrawn());
         if (amount.compareTo(remainingLimit) > 0) {
-            throw new ValidationException("Exceeds daily limit. You can withdraw $" + formatCurrency(remainingLimit) + " more today.");
+            throw new ValidationException(
+                    "Exceeds daily limit. You can withdraw $" + formatCurrency(remainingLimit) + " more today.");
         }
         client.setCheckingBalance(client.getCheckingBalance().subtract(amount));
         client.setDailyWithdrawn(client.getDailyWithdrawn().add(amount));
@@ -98,12 +140,14 @@ public class ClientService {
     }
 
     @Transactional
-    public Transaction creditAccount(int slotId, Long clientId, BigDecimal amount, TransactionType type, boolean enforceUpperLimit) {
+    public Transaction creditAccount(int slotId, Long clientId, BigDecimal amount, TransactionType type,
+            boolean enforceUpperLimit) {
         validateAmount(amount, enforceUpperLimit);
         User user = currentUserService.getCurrentUser();
         BankState state = simulationService.getAndAdvanceState(user, slotId)
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
-                "Bank state not found for slot " + slotId + ". Use POST /api/slots/" + slotId + "/start to initialize the slot."));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "Bank state not found for slot " + slotId + ". Use POST /api/slots/" + slotId
+                                + "/start to initialize the slot."));
         Client client = getClient(slotId, clientId);
         client.setCheckingBalance(client.getCheckingBalance().add(amount));
         clientRepository.save(client);
@@ -115,10 +159,53 @@ public class ClientService {
         return creditAccount(slotId, clientId, amount, TransactionType.MORTGAGE_DOWN_PAYMENT_FUNDING, false);
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public List<Transaction> getTransactions(Long clientId, int slotId) {
+        User user = currentUserService.getCurrentUser();
+        simulationService.getAndAdvanceState(user, slotId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "Bank state not found for slot " + slotId + ". Use POST /api/slots/" + slotId
+                                + "/start to initialize the slot."));
         Client client = getClient(slotId, clientId);
         return transactionRepository.findByClientOrderByCreatedAtDesc(client);
+    }
+
+    @Transactional(readOnly = true)
+    public MonthlyCashflowResponse getMonthlyCashflow(int slotId, Long clientId, int year, int month) {
+        if (year < 1) {
+            throw new ValidationException("Year must be >= 1.");
+        }
+        if (month < 1 || month > SimulationConstants.DAYS_PER_YEAR) {
+            throw new ValidationException("Month must be between 1 and " + SimulationConstants.DAYS_PER_YEAR + ".");
+        }
+        User user = currentUserService.getCurrentUser();
+        simulationService.getAndAdvanceState(user, slotId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "Bank state not found for slot " + slotId + ". Use POST /api/slots/" + slotId
+                                + "/start to initialize the slot."));
+        getClient(slotId, clientId);
+        int gameMonth = (year - 1) * SimulationConstants.DAYS_PER_YEAR + (month - 1);
+
+        TransactionRepository.MonthlyCashflowProjection totals = transactionRepository.findMonthlyCashflow(
+                clientId,
+                slotId,
+                gameMonth,
+                DEPOSIT_TYPES);
+
+        BigDecimal income = totals != null && totals.getIncome() != null ? totals.getIncome() : BigDecimal.ZERO;
+        BigDecimal spending = totals != null && totals.getSpending() != null ? totals.getSpending() : BigDecimal.ZERO;
+        BigDecimal net = income.subtract(spending);
+        double spendingVsIncomePct = income.compareTo(BigDecimal.ZERO) > 0
+                ? spending.divide(income, 6, RoundingMode.HALF_UP).doubleValue() * 100
+                : 0d;
+
+        return MonthlyCashflowResponse.builder()
+                .gameMonth(gameMonth)
+                .income(income.setScale(2, RoundingMode.HALF_UP))
+                .spending(spending.setScale(2, RoundingMode.HALF_UP))
+                .net(net.setScale(2, RoundingMode.HALF_UP))
+                .spendingVsIncomePct(spendingVsIncomePct)
+                .build();
     }
 
     private Transaction recordTransaction(Client client, BankState state, TransactionType type, BigDecimal amount) {

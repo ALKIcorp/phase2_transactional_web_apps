@@ -25,23 +25,22 @@ public class MortgageController {
 
     @PostMapping("/clients/{clientId}/mortgages")
     public MortgageResponse createMortgage(@PathVariable int slotId,
-                                           @PathVariable Long clientId,
-                                           @RequestBody MortgageRequest request) {
+            @PathVariable Long clientId,
+            @RequestBody MortgageRequest request) {
         Mortgage mortgage = mortgageService.createMortgage(
-            slotId,
-            clientId,
-            request.getProductId(),
-            request.getDownPayment(),
-            request.getTermYears()
-        );
+                slotId,
+                clientId,
+                request.getProductId(),
+                request.getDownPayment(),
+                request.getTermYears());
         return toResponse(mortgage);
     }
 
     @GetMapping("/mortgages")
     public List<MortgageResponse> listMortgages(@PathVariable int slotId) {
         return mortgageService.listMortgages(slotId).stream()
-            .map(this::toResponse)
-            .collect(Collectors.toList());
+                .map(this::toResponse)
+                .collect(Collectors.toList());
     }
 
     @PostMapping("/mortgages/{mortgageId}/approve")
@@ -56,20 +55,36 @@ public class MortgageController {
         return toResponse(mortgageService.updateStatus(slotId, mortgageId, MortgageStatus.REJECTED));
     }
 
+    @PostMapping("/mortgages/recalculate-total-paid")
+    @PreAuthorize("hasRole('ADMIN')")
+    public List<MortgageResponse> recalcTotalPaid(@PathVariable int slotId) {
+        return mortgageService.recalcTotalPaid(slotId).stream()
+                .map(this::toResponse)
+                .collect(Collectors.toList());
+    }
+
     private MortgageResponse toResponse(Mortgage mortgage) {
         return MortgageResponse.builder()
-            .id(mortgage.getId())
-            .slotId(mortgage.getSlotId())
-            .clientId(mortgage.getClient().getId())
-            .productId(mortgage.getProduct().getId())
-            .propertyPrice(mortgage.getPropertyPrice())
-            .downPayment(mortgage.getDownPayment())
-            .loanAmount(mortgage.getLoanAmount())
-            .termYears(mortgage.getTermYears())
-            .interestRate(mortgage.getInterestRate())
-            .status(mortgage.getStatus().name())
-            .createdAt(mortgage.getCreatedAt())
-            .updatedAt(mortgage.getUpdatedAt())
-            .build();
+                .id(mortgage.getId())
+                .slotId(mortgage.getSlotId())
+                .clientId(mortgage.getClient() != null ? mortgage.getClient().getId() : null)
+                .productId(mortgage.getProduct() != null ? mortgage.getProduct().getId() : null)
+                .productName(mortgage.getProduct() != null ? mortgage.getProduct().getName() : "Unknown Property")
+                .propertyPrice(mortgage.getPropertyPrice())
+                .downPayment(mortgage.getDownPayment())
+                .loanAmount(mortgage.getLoanAmount())
+                .totalPaid(mortgage.getTotalPaid())
+                .termYears(mortgage.getTermYears())
+                .interestRate(mortgage.getInterestRate())
+                .monthlyPayment(mortgage.getMonthlyPayment())
+                .nextPaymentDay(mortgage.getNextPaymentDay())
+                .startPaymentDay(mortgage.getStartPaymentDay())
+                .paymentsMade(mortgage.getPaymentsMade())
+                .lastPaymentStatus(mortgage.getLastPaymentStatus())
+                .missedPayments(mortgage.getMissedPayments())
+                .status(mortgage.getStatus() != null ? mortgage.getStatus().name() : null)
+                .createdAt(mortgage.getCreatedAt())
+                .updatedAt(mortgage.getUpdatedAt())
+                .build();
     }
 }

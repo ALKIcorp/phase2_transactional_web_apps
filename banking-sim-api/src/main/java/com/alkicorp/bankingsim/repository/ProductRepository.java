@@ -9,9 +9,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findBySlotIdAndStatus(int slotId, ProductStatus status);
 
+    List<Product> findByStatus(ProductStatus status);
+
     List<Product> findBySlotIdAndCreatedById(int slotId, Long userId);
 
     Optional<Product> findByIdAndSlotIdAndCreatedById(Long id, int slotId, Long userId);
+
+    Optional<Product> findByIdAndSlotIdAndOwnerClientId(Long id, int slotId, Long ownerClientId);
 
     Optional<Product> findByIdAndSlotId(Long id, int slotId);
 
